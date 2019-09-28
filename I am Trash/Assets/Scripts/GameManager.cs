@@ -69,6 +69,9 @@ public class GameManager : MonoBehaviour {
                     // set the end game score
                     gameOverScoreDisplay.text = mainScoreDisplay.text;
 
+                    // hide the player so game doesn't continue playing
+                    player.SetActive(false);
+
                     // switch which GUI is showing
                     mainCanvas.SetActive(false);
                     gameOverCanvas.SetActive(true);

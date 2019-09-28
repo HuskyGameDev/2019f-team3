@@ -11,6 +11,8 @@ public class PlayerControler : MonoBehaviour
 
     public float runSpeed = 20.0f;
 
+    private int trashBag = 0;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -33,10 +35,14 @@ public class PlayerControler : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-       //if (collision.gameObject.tag == "Trash")
-        //{
-            GameManager.gm.Collect(1);
+        if (collision.gameObject.tag == "Trash")
+        {
+            trashBag += 1;
             Destroy(collision.gameObject);
-        //}
+        } else if (collision.gameObject.tag == "Dumpster")
+        {
+            GameManager.gm.Collect(trashBag);
+            trashBag = 0;
+        }
     }
 }
