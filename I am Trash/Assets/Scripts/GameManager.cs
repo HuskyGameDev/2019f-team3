@@ -53,9 +53,9 @@ public class GameManager : MonoBehaviour {
         countdownDisplay.text = levelTimer.ToString();
 
         // make other UI inactive
-        //gameOverCanvas.SetActive(false);
-        //if (canBeatLevel)
-        //    beatLevelCanvas.SetActive(false);
+        gameOverCanvas.SetActive(false);
+        if (canBeatLevel)
+            beatLevelCanvas.SetActive(false);
 
         InvokeRepeating("Countdown", 1.0f, 1.0f);
     }
@@ -68,11 +68,11 @@ public class GameManager : MonoBehaviour {
                     gameState = GameStates.Lose;
 
                     // set the end game score
-                   // gameOverScoreDisplay.text = mainScoreDisplay.text;
+                    gameOverScoreDisplay.text = mainScoreDisplay.text;
 
                     // switch which GUI is showing
-                    //mainCanvas.SetActive(false);
-                    //gameOverCanvas.SetActive(true);
+                    mainCanvas.SetActive(false);
+                    gameOverCanvas.SetActive(true);
                 }
                 else if (canBeatLevel && score >= beatLevelScore) {
                     // update gameState
@@ -103,6 +103,7 @@ public class GameManager : MonoBehaviour {
 
                     gameState = GameStates.GameOver;
                 }*/
+                gameState = GameStates.GameOver;
                 break;
             case GameStates.GameOver:
                 UnityEditor.EditorApplication.isPlaying = false;
