@@ -9,7 +9,8 @@ public class PlayerControler : MonoBehaviour
     float horizontal;
     float vertical;
 
-    public float runSpeed = 20.0f;
+    public float runSpeed = 5.0f;
+    public float trashSlows = 0.0f;
 
     private int trashBag = 0;
 
@@ -26,10 +27,12 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Moves slower with more trash
+        float speed = runSpeed * (1 - (trashBag * trashSlows));
         if (Mathf.Abs(horizontal) >= Mathf.Abs(vertical)) {
-            body.velocity = new Vector2(horizontal * runSpeed, 0.0f);
+            body.velocity = new Vector2(horizontal * speed, 0.0f);
         } else {
-            body.velocity = new Vector2(0.0f, vertical * runSpeed);
+            body.velocity = new Vector2(0.0f, vertical * speed);
         }
     }
 
