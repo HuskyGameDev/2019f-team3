@@ -21,10 +21,9 @@ public class GameManager : MonoBehaviour {
 
     public GameObject mainCanvas;
     public Text mainScoreDisplay;
+    public Text countdownDisplay;
     public GameObject gameOverCanvas;
     public Text gameOverScoreDisplay;
-
-    public Text countdownDisplay;
 
     // Only need to set if canBeatLevel is set to true
     public GameObject beatLevelCanvas;
@@ -53,9 +52,9 @@ public class GameManager : MonoBehaviour {
         countdownDisplay.text = levelTimer.ToString();
 
         // make other UI inactive
-        //gameOverCanvas.SetActive(false);
-        //if (canBeatLevel)
-        //    beatLevelCanvas.SetActive(false);
+        gameOverCanvas.SetActive(false);
+        if (canBeatLevel)
+            beatLevelCanvas.SetActive(false);
 
         InvokeRepeating("Countdown", 1.0f, 1.0f);
     }
@@ -68,11 +67,11 @@ public class GameManager : MonoBehaviour {
                     gameState = GameStates.Lose;
 
                     // set the end game score
-                   // gameOverScoreDisplay.text = mainScoreDisplay.text;
+                    gameOverScoreDisplay.text = mainScoreDisplay.text;
 
                     // switch which GUI is showing
-                    //mainCanvas.SetActive(false);
-                    //gameOverCanvas.SetActive(true);
+                    mainCanvas.SetActive(false);
+                    gameOverCanvas.SetActive(true);
                 }
                 else if (canBeatLevel && score >= beatLevelScore) {
                     // update gameState
@@ -94,15 +93,18 @@ public class GameManager : MonoBehaviour {
 
                     gameState = GameStates.GameOver;
                 }*/
+
                 gameState = GameStates.GameOver;
                 break;
             case GameStates.BeatLevel:
-                //backgroundMusic.volume -= 0.01f;
-                /*if (backgroundMusic.volume <= 0.0f) {
+                /*backgroundMusic.volume -= 0.01f;
+                if (backgroundMusic.volume <= 0.0f) {
                     AudioSource.PlayClipAtPoint(beatLevelSFX, gameObject.transform.position);
 
                     gameState = GameStates.GameOver;
                 }*/
+
+                gameState = GameStates.GameOver;
                 break;
             case GameStates.GameOver:
                 UnityEditor.EditorApplication.isPlaying = false;
