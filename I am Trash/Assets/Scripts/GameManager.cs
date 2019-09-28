@@ -107,8 +107,7 @@ public class GameManager : MonoBehaviour {
                 gameState = GameStates.GameOver;
                 break;
             case GameStates.GameOver:
-                UnityEditor.EditorApplication.isPlaying = false;
-                Application.Quit();
+                // Nothing
                 break;
         }
 

@@ -30,4 +30,13 @@ public class PlayerControler : MonoBehaviour
             body.velocity = new Vector2(0.0f, vertical * runSpeed);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+       //if (collision.gameObject.tag == "Trash")
+        //{
+            GameManager.gm.Collect(1);
+            Destroy(collision.gameObject);
+        //}
+    }
 }
