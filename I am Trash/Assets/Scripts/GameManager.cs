@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -69,9 +69,6 @@ public class GameManager : MonoBehaviour {
                     // set the end game score
                     gameOverScoreDisplay.text = mainScoreDisplay.text;
 
-                    // hide the player so game doesn't continue playing
-                    player.SetActive(false);
-
                     // switch which GUI is showing
                     mainCanvas.SetActive(false);
                     gameOverCanvas.SetActive(true);
@@ -110,7 +107,8 @@ public class GameManager : MonoBehaviour {
                 gameState = GameStates.GameOver;
                 break;
             case GameStates.GameOver:
-                // Nothing
+                UnityEditor.EditorApplication.isPlaying = false;
+                Application.Quit();
                 break;
         }
 

@@ -29,6 +29,7 @@ public class PlayerControler : MonoBehaviour
     {
         // Moves slower with more trash
         float speed = runSpeed * (1 - (trashBag * trashSlows));
+
         if (Mathf.Abs(horizontal) >= Mathf.Abs(vertical)) {
             body.velocity = new Vector2(horizontal * speed, 0.0f);
         } else {
