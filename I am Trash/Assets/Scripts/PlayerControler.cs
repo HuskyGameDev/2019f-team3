@@ -14,6 +14,9 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+
+        //Freeze rotation
+        body.freezeRotation = true;
     }
 
     void Update()
