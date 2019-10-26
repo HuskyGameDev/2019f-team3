@@ -65,11 +65,11 @@ public class PlayerControler : MonoBehaviour
 
         bool hasWall = wallsMap.GetTile(targetCell) != null;
 
+        movement = Vector2.zero;
+        letsMove = false;
+
         if (!hasWall)
         {
-            movement = Vector2.zero;
-            letsMove = false;
-
             StartCoroutine(SmoothMove(startPos, endPos));
         }
     }
