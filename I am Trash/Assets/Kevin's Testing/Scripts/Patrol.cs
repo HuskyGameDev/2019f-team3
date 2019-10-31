@@ -8,12 +8,17 @@ public class Patrol : MonoBehaviour
     private float waitTime;
     public float startWaitTime;
 
-    public Transform[] moveSpots;
+    public int active;
+
+    public MoveNode[] moveSpots;
     private int nextSpot;
+
+    public RacoonAI ra;
 
     // Start is called before the first frame update
     void Start()
     {
+        //active = 1;
         waitTime = startWaitTime;
         nextSpot = 0;
     }
@@ -21,22 +26,34 @@ public class Patrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, moveSpots[nextSpot].position, speed * Time.deltaTime);
-
-        if (Vector2.Distance(transform.position, moveSpots[nextSpot].position) < 0.2f)
+        if ( active == 1 )
         {
-            if (waitTime <= 0)
+            ra.setCurrentNode(moveSpots[nextSpot]);
+            transform.position = Vector2.MoveTowards(transform.position, moveSpots[nextSpot].getPosition(), speed * Time.deltaTime);
+
+            if (Vector2.Distance(transform.position, moveSpots[nextSpot].getPosition()) < 0.2f)
             {
-                nextSpot++;
-                if ( nextSpot >= moveSpots.Length )
+                if (waitTime <= 0)
                 {
-                    nextSpot = 0;
+                    nextSpot++;
+                    if (nextSpot >= moveSpots.Length)
+                    {
+                        nextSpot = 0;
+                    }
+                    waitTime = startWaitTime;
                 }
-                waitTime = startWaitTime;
-            } else
-            {
-                waitTime -= Time.deltaTime;
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }
             }
         }
+    }
+
+    //Invert Active
+    public void setActive( int n )
+    {
+        active = n;
+        Debug.Log("Active: " + active);
     }
 }

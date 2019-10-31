@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class MoveNode : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public MoveNode up = null;
+    public MoveNode down = null;
+    public MoveNode left = null;
+    public MoveNode right = null;
+
+    public MoveNode getUpNode()
     {
-        
+        return up;
     }
 
-    // Update is called once per frame
-    void Update()
+    public MoveNode getDownNode()
     {
-        
+        return down;
+    }
+
+    public MoveNode getLeftNode()
+    {
+        return left;
+    }
+
+    public MoveNode getRightNode()
+    {
+        return right;
+    }
+
+    public Vector2 getPosition()
+    {
+        return transform.position;
     }
 }
