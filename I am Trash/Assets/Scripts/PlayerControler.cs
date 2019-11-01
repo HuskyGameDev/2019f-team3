@@ -10,6 +10,7 @@ public class PlayerControler : MonoBehaviour
 
     public float runSpeed = 3.0f;
     public float moveCooldown = 0.2f;
+    public int bagSize = 10;
 
     public Tilemap groundMap;
     public Tilemap wallsMap;
@@ -51,7 +52,10 @@ public class PlayerControler : MonoBehaviour
             movement.y = 0.0f;
         }
 
-        StartCoroutine(MovementCooldown(moveCooldown));
+        if (moveCooldown > 0f)
+        {
+            StartCoroutine(MovementCooldown(moveCooldown));
+        }
         Move(movement.x, movement.y);
     }
 
@@ -80,13 +84,15 @@ public class PlayerControler : MonoBehaviour
 
         float progress = 0.0f;
 
-        while (progress < 1f)
+        do
         {
             progress += Time.deltaTime * runSpeed;
             transform.position = Vector3.Lerp(startPos, endPos, progress);
 
             yield return null;
-        }
+        } while (progress < 1f);
+
+        transform.position = endPos;
 
         isMoving = false;
     }
@@ -108,8 +114,11 @@ public class PlayerControler : MonoBehaviour
     {
         if (collision.gameObject.tag == "Trash")
         {
-            trashBag += 1;
-            Destroy(collision.gameObject);
+            if (trashBag < bagSize)
+            {
+                trashBag += 1;
+                Destroy(collision.gameObject);
+            }
         } else if (collision.gameObject.tag == "Dumpster")
         {
             GameManager.gm.Collect(trashBag);
