@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
+	<RootPaths>
+		<ProjectRoot>C:\Users\dstockero\Documents\GitHub\2019f-team3\I am Trash\I am Trash_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\dstockero\Documents\GitHub\2019f-team3\I am Trash\I am Trash_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\dstockero\Documents\GitHub\2019f-team3\I am Trash\I am Trash_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\dstockero\Documents\GitHub\2019f-team3\I am Trash\I am Trash_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\main</ObjectPath>
+			<ShortName>main</ShortName>
+			<Path>main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="4158285989" Name="gameover" ObjectPath="\Events\Default Work Unit\gameover"/>
+				<Event Id="1116398592" Name="hit" ObjectPath="\Events\Default Work Unit\hit"/>
+				<Event Id="116994856" Name="raccoon" ObjectPath="\Events\Default Work Unit\raccoon"/>
+				<Event Id="3057253194" Name="trash_dropoff" ObjectPath="\Events\Default Work Unit\trash_dropoff"/>
+				<Event Id="94289744" Name="trash_pickup" ObjectPath="\Events\Default Work Unit\trash_pickup"/>
+				<Event Id="979765101" Name="win" ObjectPath="\Events\Default Work Unit\win"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="7658984" Language="SFX">
+					<ShortName>win_v2.wav</ShortName>
+					<Path>SFX\win_v2_1C9C67B2.wem</Path>
+				</File>
+				<File Id="243130175" Language="SFX">
+					<ShortName>Trash_Dropoff.wav</ShortName>
+					<Path>SFX\Trash_Dropoff_1C9C67B2.wem</Path>
+				</File>
+				<File Id="381581655" Language="SFX">
+					<ShortName>hit.wav</ShortName>
+					<Path>SFX\hit_1C9C67B2.wem</Path>
+				</File>
+				<File Id="499744824" Language="SFX">
+					<ShortName>fail.wav</ShortName>
+					<Path>SFX\fail_1C9C67B2.wem</Path>
+				</File>
+				<File Id="601032968" Language="SFX">
+					<ShortName>Trash_pickup_v2.wav</ShortName>
+					<Path>SFX\Trash_pickup_v2_CAA7302C.wem</Path>
+				</File>
+				<File Id="1027924595" Language="SFX">
+					<ShortName>Raccoon.wav</ShortName>
+					<Path>SFX\Raccoon_1C9C67B2.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A356D7FD-4203-4434-BD26-A85920DF642E}" SchemaVersion="85">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{A356D7FD-4203-4434-BD26-A85920DF642E}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="SFX" ID="{CBB92EF2-0E80-4828-AEF4-7F4190722255}" ShortID="750424379">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2C1F10F3-9BAD-4F92-B532-72FF1B650F68}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD22E323-E976-4090-BE59-FA9BB8D4BE72}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="fail" ID="{9A3A2CBB-4FA5-46C2-A632-B948791FC8D1}" ShortID="731262601">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2C1F10F3-9BAD-4F92-B532-72FF1B650F68}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD22E323-E976-4090-BE59-FA9BB8D4BE72}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="fail" ID="{2D0F0213-96F0-479F-8786-A1B49A220481}" ShortID="499744824">
+									<Language>SFX</Language>
+									<AudioFile>fail.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="fail" ID="{2D0F0213-96F0-479F-8786-A1B49A220481}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="hit" ID="{87BBDF89-A65B-4A8D-9D50-22BEF74C28EF}" ShortID="347436893">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2C1F10F3-9BAD-4F92-B532-72FF1B650F68}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD22E323-E976-4090-BE59-FA9BB8D4BE72}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="hit" ID="{7F5DC25C-AF36-4C3A-B4C1-4A66B784E5E1}" ShortID="381581655">
+									<Language>SFX</Language>
+									<AudioFile>hit.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="hit" ID="{7F5DC25C-AF36-4C3A-B4C1-4A66B784E5E1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Raccoon" ID="{44332BB8-CCD8-4A6C-8F7F-D4C307A63B53}" ShortID="498204335">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{98DF9912-BFA2-4551-AF0F-B1F9F8BE8707}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="253"/>
+													<Property Name="Min" Type="Real64" Value="-303"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2C1F10F3-9BAD-4F92-B532-72FF1B650F68}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD22E323-E976-4090-BE59-FA9BB8D4BE72}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Raccoon" ID="{444751D6-4B40-45C5-87AC-47F466DC8E72}" ShortID="1027924595">
+									<Language>SFX</Language>
+									<AudioFile>Raccoon.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Raccoon" ID="{444751D6-4B40-45C5-87AC-47F466DC8E72}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Trash_pickup_v2" ID="{D9D9067E-1BD2-4FDF-BD43-483802767E18}" ShortID="446456848">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2C1F10F3-9BAD-4F92-B532-72FF1B650F68}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD22E323-E976-4090-BE59-FA9BB8D4BE72}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Trash_pickup_v2" ID="{4789955A-C5E4-4B9C-A4C2-5B8301D41F20}" ShortID="601032968">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.356023850016197"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.14173165694849"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Trash_pickup_v2.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Trash_pickup_v2" ID="{4789955A-C5E4-4B9C-A4C2-5B8301D41F20}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="win_v2" ID="{2E8B64D3-A651-4341-BCCF-427F120CF008}" ShortID="864817400">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2C1F10F3-9BAD-4F92-B532-72FF1B650F68}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD22E323-E976-4090-BE59-FA9BB8D4BE72}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="win_v2" ID="{99E33799-5903-4C5B-8072-F6E7C757B45E}" ShortID="7658984">
+									<Language>SFX</Language>
+									<AudioFile>win_v2.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="win_v2" ID="{99E33799-5903-4C5B-8072-F6E7C757B45E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Trash_Dropoff" ID="{1C6B83B5-8EDB-4497-A7E8-A5EA691036E9}" ShortID="456693879">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{2C1F10F3-9BAD-4F92-B532-72FF1B650F68}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{CD22E323-E976-4090-BE59-FA9BB8D4BE72}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Trash_Dropoff" ID="{2B74F08B-33D1-4B83-A23D-E4150C2B968A}" ShortID="243130175">
+									<Language>SFX</Language>
+									<AudioFile>Trash_Dropoff.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Trash_Dropoff" ID="{2B74F08B-33D1-4B83-A23D-E4150C2B968A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

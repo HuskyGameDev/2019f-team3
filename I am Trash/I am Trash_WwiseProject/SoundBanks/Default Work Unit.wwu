@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1CEC3DE7-683B-4AAC-8AD4-B6001DEB8B66}" SchemaVersion="85">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{1CEC3DE7-683B-4AAC-8AD4-B6001DEB8B66}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="main" ID="{79201287-38D8-4404-83DA-27A4C6E8F05A}">
+					<ObjectInclusionList>
+						<ObjectRef Name="trash_pickup" ID="{17A8316D-5E7D-4257-9245-CC7CD8BCF412}" WorkUnitID="{1F0E8DB6-DF14-4D8E-B145-83FF1FD8C0B1}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="trash_dropoff" ID="{01675708-30C6-4499-8286-F81F30D8AEBD}" WorkUnitID="{1F0E8DB6-DF14-4D8E-B145-83FF1FD8C0B1}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="hit" ID="{59CC40DE-0662-4533-BB72-609026D9BD66}" WorkUnitID="{1F0E8DB6-DF14-4D8E-B145-83FF1FD8C0B1}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="win" ID="{FEA91BA6-6924-478C-9ED0-1376D338C2F7}" WorkUnitID="{1F0E8DB6-DF14-4D8E-B145-83FF1FD8C0B1}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="gameover" ID="{C64E8160-7F66-4821-A0D7-49CE40148736}" WorkUnitID="{1F0E8DB6-DF14-4D8E-B145-83FF1FD8C0B1}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="raccoon" ID="{148989B0-3056-492D-866F-656E4A863595}" WorkUnitID="{1F0E8DB6-DF14-4D8E-B145-83FF1FD8C0B1}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

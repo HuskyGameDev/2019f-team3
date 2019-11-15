@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1F0E8DB6-DF14-4D8E-B145-83FF1FD8C0B1}" SchemaVersion="85">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{1F0E8DB6-DF14-4D8E-B145-83FF1FD8C0B1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="hit" ID="{59CC40DE-0662-4533-BB72-609026D9BD66}">
+					<ChildrenList>
+						<Action Name="" ID="{2861F317-8FB3-4ACB-AF11-40BBAC9BA096}" ShortID="865991367">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="hit" ID="{87BBDF89-A65B-4A8D-9D50-22BEF74C28EF}" WorkUnitID="{A356D7FD-4203-4434-BD26-A85920DF642E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="win" ID="{FEA91BA6-6924-478C-9ED0-1376D338C2F7}">
+					<ChildrenList>
+						<Action Name="" ID="{D4D2989A-04BD-404B-9646-F31EBE79992F}" ShortID="819712741">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="win_v2" ID="{2E8B64D3-A651-4341-BCCF-427F120CF008}" WorkUnitID="{A356D7FD-4203-4434-BD26-A85920DF642E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="trash_pickup" ID="{17A8316D-5E7D-4257-9245-CC7CD8BCF412}">
+					<ChildrenList>
+						<Action Name="" ID="{CFBA1B0F-F39A-4E5E-AF40-DF923F1342E9}" ShortID="163132542">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Trash_pickup_v2" ID="{D9D9067E-1BD2-4FDF-BD43-483802767E18}" WorkUnitID="{A356D7FD-4203-4434-BD26-A85920DF642E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="trash_dropoff" ID="{01675708-30C6-4499-8286-F81F30D8AEBD}">
+					<ChildrenList>
+						<Action Name="" ID="{CD8B7FD8-C97A-4118-8549-577FAF6DA73F}" ShortID="495527437">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Trash_Dropoff" ID="{1C6B83B5-8EDB-4497-A7E8-A5EA691036E9}" WorkUnitID="{A356D7FD-4203-4434-BD26-A85920DF642E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="raccoon" ID="{148989B0-3056-492D-866F-656E4A863595}">
+					<ChildrenList>
+						<Action Name="" ID="{D92CDAF3-05E0-4A18-9E29-4026A253E8F2}" ShortID="1072828427">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Raccoon" ID="{44332BB8-CCD8-4A6C-8F7F-D4C307A63B53}" WorkUnitID="{A356D7FD-4203-4434-BD26-A85920DF642E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="gameover" ID="{C64E8160-7F66-4821-A0D7-49CE40148736}">
+					<ChildrenList>
+						<Action Name="" ID="{3497BCFE-3C78-413B-8BF3-3E60EEC95295}" ShortID="949606984">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="fail" ID="{9A3A2CBB-4FA5-46C2-A632-B948791FC8D1}" WorkUnitID="{A356D7FD-4203-4434-BD26-A85920DF642E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

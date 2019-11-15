@@ -1,0 +1,16 @@
+Event	ID	Name			Wwise Object Path	Notes
+	94289744	trash_pickup			\Default Work Unit\trash_pickup	
+	116994856	raccoon			\Default Work Unit\raccoon	
+	979765101	win			\Default Work Unit\win	
+	1116398592	hit			\Default Work Unit\hit	
+	3057253194	trash_dropoff			\Default Work Unit\trash_dropoff	
+	4158285989	gameover			\Default Work Unit\gameover	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	7658984	win_v2	C:\Users\dstockero\Documents\GitHub\2019f-team3\I am Trash\I am Trash_WwiseProject\.cache\Windows\SFX\win_v2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\win_v2		312516
+	243130175	Trash_Dropoff	C:\Users\dstockero\Documents\GitHub\2019f-team3\I am Trash\I am Trash_WwiseProject\.cache\Windows\SFX\Trash_Dropoff_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Trash_Dropoff		242692
+	381581655	hit	C:\Users\dstockero\Documents\GitHub\2019f-team3\I am Trash\I am Trash_WwiseProject\.cache\Windows\SFX\hit_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\hit		82120
+	499744824	fail	C:\Users\dstockero\Documents\GitHub\2019f-team3\I am Trash\I am Trash_WwiseProject\.cache\Windows\SFX\fail_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\fail		417708
+	601032968	Trash_pickup_v2	C:\Users\dstockero\Documents\GitHub\2019f-team3\I am Trash\I am Trash_WwiseProject\.cache\Windows\SFX\Trash_pickup_v2_CAA7302C.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Trash_pickup_v2		201544
+	1027924595	Raccoon	C:\Users\dstockero\Documents\GitHub\2019f-team3\I am Trash\I am Trash_WwiseProject\.cache\Windows\SFX\Raccoon_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Raccoon		110396
+
