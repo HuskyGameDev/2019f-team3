@@ -9,16 +9,17 @@ public class PlayerControler : MonoBehaviour
     Rigidbody2D body;
 
     public float runSpeed = 3.0f;
-    public float moveCooldown = 0.2f;
     public int bagSize = 10;
+    public float unlimitedTBTime = 5.0f;
 
     public Tilemap groundMap;
     public Tilemap wallsMap;
 
     private int trashBag = 0;
     private bool isMoving;
-    private bool onCooldown;
     private bool letsMove;
+
+    private bool unlimitedTrashBag;
 
     private Vector2 movement;
 
@@ -39,14 +40,10 @@ public class PlayerControler : MonoBehaviour
         zVal = wallsMap.origin.z;
 
         isMoving = false;
-        onCooldown = false;
     }
 
     void Update()
     {
-        //Debug.Log(transform.position.x + " " + transform.position.y);
-        if (onCooldown) return;
-
         if (!isMoving || progress > 0.8f)
         {
             Vector2 currentKeys = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -63,11 +60,6 @@ public class PlayerControler : MonoBehaviour
             if (!movement.x.Equals(0.0f))
             {
                 movement.y = 0.0f;
-            }
-
-            if (moveCooldown > 0f)
-            {
-                StartCoroutine(MovementCooldown(moveCooldown));
             }
 
             startPos = transform.position;
@@ -89,7 +81,7 @@ public class PlayerControler : MonoBehaviour
         if (isMoving)
         {
             progress += Time.deltaTime * runSpeed;
-            //progress = (float) Mathf.Round(progress * 100f) / 100f;
+            
             if (progress < 0.95f)
             {
                 transform.position = Vector3.Lerp(startPos, endPos, progress);
@@ -101,32 +93,48 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    private IEnumerator MovementCooldown(float cooldown)
-    {
-        onCooldown = true;
-
-        while (cooldown > 0f)
-        {
-            cooldown -= Time.deltaTime;
-            yield return null;
-        }
-
-        onCooldown = false;
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Trash")
         {
-            if (trashBag < bagSize)
+            if (unlimitedTrashBag || trashBag < bagSize)
             {
                 trashBag += 1;
                 Destroy(collision.gameObject);
             }
-        } else if (collision.gameObject.tag == "Dumpster")
+        }
+        else if (collision.gameObject.tag == "Dumpster")
         {
             GameManager.gm.Collect(trashBag);
             trashBag = 0;
+        }
+        else if (collision.gameObject.tag == "UBPickup")
+        {
+            unlimitedTrashBag = true;
+            Destroy(collision.gameObject);
+            StartCoroutine(UnlimitedTBCooldown());
+        }
+    }
+
+    private IEnumerator UnlimitedTBCooldown()
+    {
+        float time = 0f;
+
+        while (time < unlimitedTBTime)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        unlimitedTrashBag = false;
+
+        Debug.Log(trashBag);
+
+        if (trashBag > bagSize)
+        {
+            GameManager.gm.DropTrash(trashBag - bagSize, transform.position);
+            Debug.Log("Called gm");
+            trashBag = bagSize;
         }
     }
 }
