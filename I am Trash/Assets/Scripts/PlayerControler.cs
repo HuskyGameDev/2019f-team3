@@ -10,16 +10,24 @@ public class PlayerControler : MonoBehaviour
 
     public float runSpeed = 3.0f;
     public float moveCooldown = 0.2f;
+    public int bagSize = 10;
 
     public Tilemap groundMap;
     public Tilemap wallsMap;
 
     private int trashBag = 0;
-    private bool isMoving = false;
-    private bool onCooldown = false;
-    private bool letsMove = false;
+    private bool isMoving;
+    private bool onCooldown;
+    private bool letsMove;
 
     private Vector2 movement;
+
+    private int zVal = 0;
+
+    private float progress = 0f;
+
+    private Vector3 startPos;
+    private Vector3 endPos;
 
     void Start()
     {
@@ -27,68 +35,70 @@ public class PlayerControler : MonoBehaviour
 
         //Freeze rotation
         body.freezeRotation = true;
+
+        zVal = wallsMap.origin.z;
+
+        isMoving = false;
+        onCooldown = false;
     }
 
     void Update()
     {
-        if (isMoving || onCooldown) return;
+        //Debug.Log(transform.position.x + " " + transform.position.y);
+        if (onCooldown) return;
 
-        Vector2 currentKeys = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        if (currentKeys != Vector2.zero)
+        if (!isMoving || progress > 0.8f)
         {
-            movement = currentKeys;
-            letsMove = true;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (isMoving || onCooldown || !letsMove) return;
-
-        if (!movement.x.Equals(0.0f))
-        {
-            movement.y = 0.0f;
+            Vector2 currentKeys = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            
+            if (currentKeys != Vector2.zero)
+            {
+                movement = currentKeys;
+                letsMove = true;
+            }
         }
 
-        StartCoroutine(MovementCooldown(moveCooldown));
-        Move(movement.x, movement.y);
-    }
-
-    private void Move(float xDir, float yDir)
-    {
-
-        Vector3 startPos = transform.position;
-        Vector3 endPos = new Vector3(startPos.x + xDir, startPos.y + yDir, startPos.z);
-
-        Vector3Int targetCell = new Vector3Int((int)(endPos.x - 0.5f), (int)(endPos.y - 0.5f), (int)endPos.z);
-
-        bool hasWall = wallsMap.GetTile(targetCell) != null;
-
-        if (!hasWall)
+        if (!isMoving && letsMove)
         {
+            if (!movement.x.Equals(0.0f))
+            {
+                movement.y = 0.0f;
+            }
+
+            if (moveCooldown > 0f)
+            {
+                StartCoroutine(MovementCooldown(moveCooldown));
+            }
+
+            startPos = transform.position;
+            endPos = new Vector3(startPos.x + movement.x, startPos.y + movement.y, startPos.z);
+
+            Vector3Int targetCell = new Vector3Int((int)(endPos.x - 0.5f), (int)(endPos.y - 0.5f), zVal);
+
+            bool hasWall = wallsMap.GetTile(targetCell) != null;
+
             movement = Vector2.zero;
             letsMove = false;
 
-            StartCoroutine(SmoothMove(startPos, endPos));
+            if (!hasWall)
+            {
+                isMoving = true;
+            }
         }
-    }
 
-    private IEnumerator SmoothMove(Vector3 startPos, Vector3 endPos)
-    {
-        isMoving = true;
-
-        float progress = 0.0f;
-
-        while (progress < 1f)
+        if (isMoving)
         {
             progress += Time.deltaTime * runSpeed;
-            transform.position = Vector3.Lerp(startPos, endPos, progress);
-
-            yield return null;
+            //progress = (float) Mathf.Round(progress * 100f) / 100f;
+            if (progress < 0.95f)
+            {
+                transform.position = Vector3.Lerp(startPos, endPos, progress);
+            } else {
+                transform.position = Vector3.Lerp(startPos, endPos, 1f);
+                isMoving = false;
+                progress = 0f;
+            }
         }
-
-        isMoving = false;
     }
 
     private IEnumerator MovementCooldown(float cooldown)
@@ -103,13 +113,17 @@ public class PlayerControler : MonoBehaviour
 
         onCooldown = false;
     }
-
+	
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Trash")
         {
-            trashBag += 1;
-            Destroy(collision.gameObject);
+            if (trashBag < bagSize)
+            {
+                trashBag += 1;
+                Destroy(collision.gameObject);
+                GameManager.gm.updateTrash(trashBag);
+            }
         } else if (collision.gameObject.tag == "Dumpster")
         {
             GameManager.gm.Collect(trashBag);
