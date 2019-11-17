@@ -8,24 +8,20 @@ public class PlayerControler : MonoBehaviour
 {
     Rigidbody2D body;
 
-    public float runSpeed = 3.0f;
+    public float runSpeed = 5.0f;
     public int bagSize = 10;
-    public float unlimitedTBTime = 5.0f;
 
-    public Tilemap groundMap;
     public Tilemap wallsMap;
 
-    private int trashBag = 0;
+    private int trashBag;
     private bool isMoving;
     private bool letsMove;
 
-    private bool unlimitedTrashBag;
-
     private Vector2 movement;
 
-    private int zVal = 0;
+    private int zVal;
 
-    private float progress = 0f;
+    private float progress;
 
     private Vector3 startPos;
     private Vector3 endPos;
@@ -93,11 +89,21 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
+    public int GetTrashBag()
+    {
+        return trashBag;
+    }
+
+    public void SetTrashBag(int trash)
+    {
+        trashBag = trash;
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Trash")
         {
-            if (unlimitedTrashBag || trashBag < bagSize)
+            if (trashBag < bagSize)
             {
                 trashBag += 1;
                 Destroy(collision.gameObject);
@@ -107,34 +113,6 @@ public class PlayerControler : MonoBehaviour
         {
             GameManager.gm.Collect(trashBag);
             trashBag = 0;
-        }
-        else if (collision.gameObject.tag == "UBPickup")
-        {
-            unlimitedTrashBag = true;
-            Destroy(collision.gameObject);
-            StartCoroutine(UnlimitedTBCooldown());
-        }
-    }
-
-    private IEnumerator UnlimitedTBCooldown()
-    {
-        float time = 0f;
-
-        while (time < unlimitedTBTime)
-        {
-            time += Time.deltaTime;
-            yield return null;
-        }
-
-        unlimitedTrashBag = false;
-
-        Debug.Log(trashBag);
-
-        if (trashBag > bagSize)
-        {
-            GameManager.gm.DropTrash(trashBag - bagSize, transform.position);
-            Debug.Log("Called gm");
-            trashBag = bagSize;
         }
     }
 }
