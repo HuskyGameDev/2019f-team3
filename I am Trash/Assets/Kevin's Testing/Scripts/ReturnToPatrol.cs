@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class ReturnToPatrol : MonoBehaviour
 {
-    public GameObject player;
     private int active;
+    private MoveNode targetNode;
     public MoveNode currentNode;
     private float speed;
     public RacoonAI ra;
+    public Patrol p;
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +22,13 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( active == 1 )
+        if (active == 1)
         {
-            if ( transform.position.x == currentNode.getPosition().x && transform.position.y == currentNode.getPosition().y ) 
+            if (transform.position.x == currentNode.getPosition().x && transform.position.y == currentNode.getPosition().y)
             {
-                //Find player's coordinates
-                float pX = player.transform.position.x;
-                float pY = player.transform.position.y;
+                //Find Target's coordinates
+                float pX = targetNode.getPosition().x;
+                float pY = targetNode.getPosition().y;
 
                 //Get our coordinates
                 float eX = transform.position.x;
@@ -174,24 +175,26 @@ public class FollowPlayer : MonoBehaviour
 
                     ra.setCurrentNode(currentNode);
                 }
-            } else
+            }
+            else
             {
                 transform.position = Vector2.MoveTowards(transform.position, currentNode.getPosition(), speed * Time.deltaTime);
             }
-            
+
         }
     }
 
     //Set Active
     public void SetActive(int n, MoveNode m)
     {
-        if ( n != active )
+        if (n != active)
         {
             active = n;
             currentNode = m;
             if (active == 1)
             {
-                Debug.Log("Follow Active");
+                Debug.Log("Return Active");
+                targetNode = p.getCurrrentNode();
             }
         }
     }

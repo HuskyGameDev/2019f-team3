@@ -16,6 +16,7 @@ public class RacoonAI : MonoBehaviour
     //Scripts to change to
     public Patrol p;
     public FollowPlayer fp;
+    public ReturnToPatrol rp;
 
     //Current node Racoon is on
     public MoveNode currentNode;
@@ -42,15 +43,34 @@ public class RacoonAI : MonoBehaviour
             state = 1;
         } else
         {
-            state = 0;
+            if ( currentNode.getPosition().x == p.getCurrrentNode().getPosition().x && currentNode.getPosition().y == p.getCurrrentNode().getPosition().y )
+            {
+                state = 0;
+            } else
+            {
+                state = 2;
+            }
         }
 
-        if ( state == 1 )
+        if (state == 1)
         {
-            p.setActive(0);
-        } else if ( state == 0 )
+            //Chasing player
+            p.SetActive(0);
+            fp.SetActive(1, currentNode);
+            rp.SetActive(0, null);
+        }
+        else if (state == 2) {
+            //Go back to the patrol route
+            p.SetActive(0);
+            fp.SetActive(0, null);
+            rp.SetActive(1, currentNode);
+        }
+        else if (state == 0)
         {
-            p.setActive(1);
+            //Go on patrol
+            p.SetActive(1);
+            fp.SetActive(0, null);
+            rp.SetActive(0, null);
         }
 
     }

@@ -50,10 +50,22 @@ public class Patrol : MonoBehaviour
         }
     }
 
-    //Invert Active
-    public void setActive( int n )
+    //Set Active
+    public void SetActive(int n)
     {
-        active = n;
-        Debug.Log("Active: " + active);
+        if (n != active)
+        {
+            active = n;
+            if ( active == 1 )
+            {
+                Debug.Log("Patrol Active");
+            }
+        }
+    }
+
+    //Get the current Node
+    public MoveNode getCurrrentNode()
+    {
+        return moveSpots[nextSpot];
     }
 }
