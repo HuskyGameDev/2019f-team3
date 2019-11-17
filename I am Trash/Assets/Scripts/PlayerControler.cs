@@ -16,11 +16,18 @@ public class PlayerControler : MonoBehaviour
     public Tilemap wallsMap;
 
     private int trashBag = 0;
-    private bool isMoving = false;
-    private bool onCooldown = false;
-    private bool letsMove = false;
+    private bool isMoving;
+    private bool onCooldown;
+    private bool letsMove;
 
     private Vector2 movement;
+
+    private int zVal = 0;
+
+    private float progress = 0f;
+
+    private Vector3 startPos;
+    private Vector3 endPos;
 
     void Start()
     {
@@ -28,73 +35,70 @@ public class PlayerControler : MonoBehaviour
 
         //Freeze rotation
         body.freezeRotation = true;
+
+        zVal = wallsMap.origin.z;
+
+        isMoving = false;
+        onCooldown = false;
     }
 
     void Update()
     {
-        if (isMoving || onCooldown) return;
+        //Debug.Log(transform.position.x + " " + transform.position.y);
+        if (onCooldown) return;
 
-        Vector2 currentKeys = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        if (currentKeys != Vector2.zero)
+        if (!isMoving || progress > 0.8f)
         {
-            movement = currentKeys;
-            letsMove = true;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (isMoving || onCooldown || !letsMove) return;
-
-        if (!movement.x.Equals(0.0f))
-        {
-            movement.y = 0.0f;
+            Vector2 currentKeys = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            
+            if (currentKeys != Vector2.zero)
+            {
+                movement = currentKeys;
+                letsMove = true;
+            }
         }
 
-        if (moveCooldown > 0f)
+        if (!isMoving && letsMove)
         {
-            StartCoroutine(MovementCooldown(moveCooldown));
+            if (!movement.x.Equals(0.0f))
+            {
+                movement.y = 0.0f;
+            }
+
+            if (moveCooldown > 0f)
+            {
+                StartCoroutine(MovementCooldown(moveCooldown));
+            }
+
+            startPos = transform.position;
+            endPos = new Vector3(startPos.x + movement.x, startPos.y + movement.y, startPos.z);
+
+            Vector3Int targetCell = new Vector3Int((int)(endPos.x - 0.5f), (int)(endPos.y - 0.5f), zVal);
+
+            bool hasWall = wallsMap.GetTile(targetCell) != null;
+
+            movement = Vector2.zero;
+            letsMove = false;
+
+            if (!hasWall)
+            {
+                isMoving = true;
+            }
         }
-        Move(movement.x, movement.y);
-    }
 
-    private void Move(float xDir, float yDir)
-    {
-
-        Vector3 startPos = transform.position;
-        Vector3 endPos = new Vector3(startPos.x + xDir, startPos.y + yDir, startPos.z);
-
-        Vector3Int targetCell = new Vector3Int((int)(endPos.x - 0.5f), (int)(endPos.y - 0.5f), (int)endPos.z);
-
-        bool hasWall = wallsMap.GetTile(targetCell) != null;
-
-        movement = Vector2.zero;
-        letsMove = false;
-
-        if (!hasWall)
-        {
-            StartCoroutine(SmoothMove(startPos, endPos));
-        }
-    }
-
-    private IEnumerator SmoothMove(Vector3 startPos, Vector3 endPos)
-    {
-        isMoving = true;
-
-        float progress = 0.0f;
-
-        do
+        if (isMoving)
         {
             progress += Time.deltaTime * runSpeed;
-            transform.position = Vector3.Lerp(startPos, endPos, progress);
-
-            yield return null;
-        } while (progress < 1f);
-
-        transform.position = endPos;
-
-        isMoving = false;
+            //progress = (float) Mathf.Round(progress * 100f) / 100f;
+            if (progress < 0.95f)
+            {
+                transform.position = Vector3.Lerp(startPos, endPos, progress);
+            } else {
+                transform.position = Vector3.Lerp(startPos, endPos, 1f);
+                isMoving = false;
+                progress = 0f;
+            }
+        }
     }
 
     private IEnumerator MovementCooldown(float cooldown)
