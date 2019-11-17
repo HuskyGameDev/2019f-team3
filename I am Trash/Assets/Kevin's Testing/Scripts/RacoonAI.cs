@@ -12,6 +12,7 @@ public class RacoonAI : MonoBehaviour
     //1 = chasing player
     //2 = going back to patrol
     private int state;
+    private float waitTime;
 
     //Scripts to change to
     public Patrol p;
@@ -26,6 +27,7 @@ public class RacoonAI : MonoBehaviour
     void Start()
     {
         state = 0;
+        waitTime = 0f;
     }
 
     // Update is called once per frame
@@ -38,8 +40,13 @@ public class RacoonAI : MonoBehaviour
             dist = dist * -1;
         }
 
-        if ( dist <= 3 )
+        if ( dist <= 4 && waitTime <= 0 )
         {
+            if ( dist <= 0.75 )
+            {
+                state = 2;
+                waitTime = 3f;
+            }
             state = 1;
         } else
         {
@@ -71,6 +78,14 @@ public class RacoonAI : MonoBehaviour
             p.SetActive(1);
             fp.SetActive(0, null);
             rp.SetActive(0, null);
+        }
+
+        if (waitTime <= 0)
+        {
+            waitTime = 0;
+        }
+        else {
+            waitTime -= Time.deltaTime;
         }
 
     }
