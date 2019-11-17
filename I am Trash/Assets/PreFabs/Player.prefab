@@ -116,7 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  trashSlows: 0
+  moveCooldown: 0.2
+  groundMap: {fileID: 0}
+  wallsMap: {fileID: 0}
 --- !u!61 &4702675897730185122
 BoxCollider2D:
   m_ObjectHideFlags: 0
