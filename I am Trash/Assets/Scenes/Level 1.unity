@@ -9220,12 +9220,12 @@ PrefabInstance:
     - target: {fileID: 8384792326290296634, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8384792326290296634, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8384792326290296637, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
