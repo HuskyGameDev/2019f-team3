@@ -113,7 +113,7 @@ public class PlayerControler : MonoBehaviour
 
         onCooldown = false;
     }
-
+	
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Trash")
@@ -122,6 +122,7 @@ public class PlayerControler : MonoBehaviour
             {
                 trashBag += 1;
                 Destroy(collision.gameObject);
+                GameManager.gm.updateTrash(trashBag);
             }
         } else if (collision.gameObject.tag == "Dumpster")
         {
