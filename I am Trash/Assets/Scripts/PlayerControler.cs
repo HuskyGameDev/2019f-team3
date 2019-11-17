@@ -118,6 +118,7 @@ public class PlayerControler : MonoBehaviour
     {
         if (collision.gameObject.tag == "Trash")
         {
+            Debug.Log("I picked up some trash");
             if (trashBag < bagSize)
             {
                 trashBag += 1;
@@ -127,6 +128,13 @@ public class PlayerControler : MonoBehaviour
         {
             GameManager.gm.Collect(trashBag);
             trashBag = 0;
+        } else if (collision.gameObject.tag == "Enemy")
+        {
+            if ( trashBag > 0 )
+            {
+                Debug.Log("The racoon took your trash!");
+                trashBag--;
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ public class FollowPlayer : MonoBehaviour
     {
         active = 0;
         currentNode = null;
-        speed = 4f;
+        speed = 3f;
     }
 
     // Update is called once per frame
@@ -101,7 +101,7 @@ public class FollowPlayer : MonoBehaviour
                         }
                         else if (left != null)
                         {
-                            transform.position = Vector2.MoveTowards(transform.position, right.getPosition(), speed * Time.deltaTime);
+                            transform.position = Vector2.MoveTowards(transform.position, left.getPosition(), speed * Time.deltaTime);
                             currentNode = left;
                             found = 1;
                         }
@@ -166,7 +166,7 @@ public class FollowPlayer : MonoBehaviour
                         }
                         else if (left != null)
                         {
-                            transform.position = Vector2.MoveTowards(transform.position, right.getPosition(), speed * Time.deltaTime);
+                            transform.position = Vector2.MoveTowards(transform.position, left.getPosition(), speed * Time.deltaTime);
                             currentNode = left;
                             found = 1;
                         }
