@@ -18299,7 +18299,7 @@ PrefabInstance:
     - target: {fileID: 8249045251872352949, guid: e9dd5317d3f8641b4b906ef4f83672d2,
         type: 3}
       propertyPath: m_Name
-      value: Trash
+      value: Trash (8)
       objectReference: {fileID: 0}
     - target: {fileID: 8249045251872352949, guid: e9dd5317d3f8641b4b906ef4f83672d2,
         type: 3}
