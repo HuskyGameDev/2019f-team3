@@ -8,23 +8,20 @@ public class PlayerControler : MonoBehaviour
 {
     Rigidbody2D body;
 
-    public float runSpeed = 3.0f;
-    public float moveCooldown = 0.2f;
+    public float runSpeed = 5.0f;
     public int bagSize = 10;
 
-    public Tilemap groundMap;
     public Tilemap wallsMap;
 
-    private int trashBag = 0;
+    private int trashBag;
     private bool isMoving;
-    private bool onCooldown;
     private bool letsMove;
 
     private Vector2 movement;
 
-    private int zVal = 0;
+    private int zVal;
 
-    private float progress = 0f;
+    private float progress;
 
     private Vector3 startPos;
     private Vector3 endPos;
@@ -39,14 +36,10 @@ public class PlayerControler : MonoBehaviour
         zVal = wallsMap.origin.z;
 
         isMoving = false;
-        onCooldown = false;
     }
 
     void Update()
     {
-        //Debug.Log(transform.position.x + " " + transform.position.y);
-        if (onCooldown) return;
-
         if (!isMoving || progress > 0.8f)
         {
             Vector2 currentKeys = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -63,11 +56,6 @@ public class PlayerControler : MonoBehaviour
             if (!movement.x.Equals(0.0f))
             {
                 movement.y = 0.0f;
-            }
-
-            if (moveCooldown > 0f)
-            {
-                StartCoroutine(MovementCooldown(moveCooldown));
             }
 
             startPos = transform.position;
@@ -89,7 +77,7 @@ public class PlayerControler : MonoBehaviour
         if (isMoving)
         {
             progress += Time.deltaTime * runSpeed;
-            //progress = (float) Mathf.Round(progress * 100f) / 100f;
+            
             if (progress < 0.95f)
             {
                 transform.position = Vector3.Lerp(startPos, endPos, progress);
@@ -101,17 +89,14 @@ public class PlayerControler : MonoBehaviour
         }
     }
 
-    private IEnumerator MovementCooldown(float cooldown)
+    public int GetTrashBag()
     {
-        onCooldown = true;
+        return trashBag;
+    }
 
-        while (cooldown > 0f)
-        {
-            cooldown -= Time.deltaTime;
-            yield return null;
-        }
-
-        onCooldown = false;
+    public void SetTrashBag(int trash)
+    {
+        trashBag = trash;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -124,7 +109,8 @@ public class PlayerControler : MonoBehaviour
                 trashBag += 1;
                 Destroy(collision.gameObject);
             }
-        } else if (collision.gameObject.tag == "Dumpster")
+        }
+        else if (collision.gameObject.tag == "Dumpster")
         {
             GameManager.gm.Collect(trashBag);
             trashBag = 0;
