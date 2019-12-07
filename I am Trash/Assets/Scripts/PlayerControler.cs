@@ -128,7 +128,6 @@ public class PlayerControler : MonoBehaviour
         {
             GameManager.gm.Collect(trashBag);
             trashBag = 0;
-            GameManager.gm.updateTrash(trashBag);
         }
     }
 }
