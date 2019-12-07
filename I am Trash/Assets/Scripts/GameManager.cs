@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour {
 
@@ -42,7 +41,6 @@ public class GameManager : MonoBehaviour {
     // Only need to set if canBeatLevel is set to true
     //public AudioClip beatLevelSFX;
 
-    public GameObject objectManagers;
 
     void Start() {
         if (gm == null)
@@ -124,6 +122,31 @@ public class GameManager : MonoBehaviour {
         }
 
     }
+    
+    public void updateTrash(int trash)
+    {
+        inventory = trash;
+        switch(inventory) {
+            case (0):
+                inventoryCanvas1.SetActive(false);
+                inventoryCanvas2.SetActive(false);
+                inventoryCanvas3.SetActive(false);
+                inventoryCanvas4.SetActive(false);
+                break;
+            case (1): 
+                inventoryCanvas1.SetActive(true);
+                break;
+            case (2): 
+                inventoryCanvas2.SetActive(true);
+                break;
+            case (3): 
+                inventoryCanvas3.SetActive(true);
+                break;
+            case (4): 
+                inventoryCanvas4.SetActive(true);
+                break;
+        }
+    }
 
     public void Collect(int amount) {
         score += amount;
@@ -140,15 +163,6 @@ public class GameManager : MonoBehaviour {
         levelTimer -= 1;
         countdownDisplay.text = levelTimer.ToString();
     }
-
-    public void DropTrash(int trash, Vector3 currentPos)
-    {
-        TrashDrop trashDropScript = objectManagers.GetComponent<TrashDrop>();
-
-        for (int i = 0; i < trash; i++)
-        {
-            trashDropScript.DropAPiece(currentPos);
-        }
-    }
+    
 }
 
