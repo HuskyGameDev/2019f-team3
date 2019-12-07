@@ -148,6 +148,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+
     public void Collect(int amount) {
         score += amount;
         if (canBeatLevel) {
@@ -163,6 +164,5 @@ public class GameManager : MonoBehaviour {
         levelTimer -= 1;
         countdownDisplay.text = levelTimer.ToString();
     }
-    
 }
 
