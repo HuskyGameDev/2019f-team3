@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Trash
   - Dumpster
+  - Enemy
   layers:
   - Default
   - TransparentFX
