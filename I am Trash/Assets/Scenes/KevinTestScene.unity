@@ -1619,12 +1619,12 @@ PrefabInstance:
     - target: {fileID: 8384792326290296634, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: -0.21
       objectReference: {fileID: 0}
     - target: {fileID: 8384792326290296634, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -1.95
       objectReference: {fileID: 0}
     - target: {fileID: 8384792326290296634, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
@@ -1674,12 +1674,12 @@ PrefabInstance:
     - target: {fileID: 8384792326290296634, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8384792326290296634, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8384792326290296636, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
@@ -1862,6 +1862,7 @@ MonoBehaviour:
   player: {fileID: 1262447078}
   p: {fileID: 1533838281}
   fp: {fileID: 1533838282}
+  rp: {fileID: 0}
   currentNode: {fileID: 1122086285}
 --- !u!1 &1556105922
 GameObject:
@@ -9453,9 +9454,13 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 452
     m_Data: {fileID: 11400000, guid: 3e7a9e555e2481747bea4c7ef8d9ae0c, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 452
     m_Data: {fileID: 21300002, guid: 8573005db0642c749883cf3f56e43959, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 452
     m_Data:
@@ -9611,6 +9616,7 @@ MonoBehaviour:
   player: {fileID: 1262447078}
   p: {fileID: 1672476439}
   fp: {fileID: 1672476438}
+  rp: {fileID: 0}
   currentNode: {fileID: 801916853}
 --- !u!114 &1672476438 stripped
 MonoBehaviour:
