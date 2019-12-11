@@ -23,7 +23,8 @@ public class FollowPlayer : MonoBehaviour
     {
         if ( active == 1 )
         {
-            if ( transform.position.x == currentNode.getPosition().x && transform.position.y == currentNode.getPosition().y ) 
+            //if ( transform.position.x == currentNode.getPosition().x && transform.position.y == currentNode.getPosition().y ) 
+            if (Vector2.Distance(transform.position, currentNode.getPosition()) < 0.2f)
             {
                 //Find player's coordinates
                 float pX = player.transform.position.x;

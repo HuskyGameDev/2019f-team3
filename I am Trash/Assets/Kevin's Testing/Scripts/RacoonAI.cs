@@ -89,6 +89,7 @@ public class RacoonAI : MonoBehaviour
         else {
             waitTime -= Time.deltaTime;
         }
+        
 
     }
 
