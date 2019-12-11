@@ -113,28 +113,21 @@ public class PlayerControler : MonoBehaviour
 
         onCooldown = false;
     }
-
+	
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Trash")
         {
-            Debug.Log("I picked up some trash");
             if (trashBag < bagSize)
             {
                 trashBag += 1;
                 Destroy(collision.gameObject);
+                GameManager.gm.updateTrash(trashBag);
             }
         } else if (collision.gameObject.tag == "Dumpster")
         {
             GameManager.gm.Collect(trashBag);
             trashBag = 0;
-        } else if (collision.gameObject.tag == "Enemy")
-        {
-            if ( trashBag > 0 )
-            {
-                Debug.Log("The racoon took your trash!");
-                trashBag--;
-            }
         }
     }
 }

@@ -6,7 +6,6 @@ public class ReturnToPatrol : MonoBehaviour
 {
     private int active;
     private MoveNode targetNode;
-    private MoveNode prevNode;
     public MoveNode currentNode;
     private float speed;
     public RacoonAI ra;
@@ -17,8 +16,7 @@ public class ReturnToPatrol : MonoBehaviour
     {
         active = 0;
         currentNode = null;
-        prevNode = null;
-        speed = 3f;
+        speed = 4f;
     }
 
     // Update is called once per frame
@@ -49,37 +47,33 @@ public class ReturnToPatrol : MonoBehaviour
                 if (Mathf.Abs(distX) > Mathf.Abs(distY))
                 {
                     //The player is more right/left so go right/left if possible
-                    if (distX < 0 && right != null && prevNode != right)
+                    if (distX < 0 && right != null)
                     {
                         //Player is to the right and you can move right
                         transform.position = Vector2.MoveTowards(transform.position, right.getPosition(), speed * Time.deltaTime);
-                        prevNode = currentNode;
                         currentNode = right;
                         found = 1;
                     }
-                    else if (distX >= 0 && left != null && prevNode != left)
+                    else if (distX >= 0 && left != null)
                     {
                         //Player is to the left and you can move left
                         transform.position = Vector2.MoveTowards(transform.position, left.getPosition(), speed * Time.deltaTime);
-                        prevNode = currentNode;
                         currentNode = left;
                         found = 1;
                     }
-                    else if (distY < 0 && up != null && prevNode != up)
+                    else if (distY < 0 && up != null)
                     {
                         //We cannot go right or left so try to in another direction toward the player
                         //Go up
                         transform.position = Vector2.MoveTowards(transform.position, up.getPosition(), speed * Time.deltaTime);
-                        prevNode = currentNode;
                         currentNode = up;
                         found = 1;
                     }
-                    else if (distY >= 0 && down != null && prevNode != down)
+                    else if (distY >= 0 && down != null)
                     {
                         //We cannot go right or left so try to in another direction toward the player
                         //Go down
                         transform.position = Vector2.MoveTowards(transform.position, down.getPosition(), speed * Time.deltaTime);
-                        prevNode = currentNode;
                         currentNode = down;
                         found = 1;
                     }
@@ -88,106 +82,63 @@ public class ReturnToPatrol : MonoBehaviour
                     if (found == 0)
                     {
                         //We haven't found a direction to move so just find somewhere we can go
-                        if (up != null && prevNode != up)
-                        {
-                            transform.position = Vector2.MoveTowards(transform.position, up.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
-                            currentNode = up;
-                            found = 1;
-                        }
-                        else if (down != null && prevNode != down)
-                        {
-                            transform.position = Vector2.MoveTowards(transform.position, down.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
-                            currentNode = down;
-                            found = 1;
-                        }
-                        else if (right != null && prevNode != right)
-                        {
-                            transform.position = Vector2.MoveTowards(transform.position, right.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
-                            currentNode = right;
-                            found = 1;
-                        }
-                        else if (left != null && prevNode != left)
-                        {
-                            transform.position = Vector2.MoveTowards(transform.position, left.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
-                            currentNode = left;
-                            found = 1;
-                        }
-                    }
-
-                    //JUST GO
-                    if (found == 0)
-                    {
-                        //We haven't found a direction to move so just find somewhere we can go
                         if (up != null)
                         {
                             transform.position = Vector2.MoveTowards(transform.position, up.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
                             currentNode = up;
                             found = 1;
                         }
                         else if (down != null)
                         {
                             transform.position = Vector2.MoveTowards(transform.position, down.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
                             currentNode = down;
                             found = 1;
                         }
                         else if (right != null)
                         {
                             transform.position = Vector2.MoveTowards(transform.position, right.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
                             currentNode = right;
                             found = 1;
                         }
                         else if (left != null)
                         {
-                            transform.position = Vector2.MoveTowards(transform.position, left.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
+                            transform.position = Vector2.MoveTowards(transform.position, right.getPosition(), speed * Time.deltaTime);
                             currentNode = left;
                             found = 1;
                         }
                     }
-
                     ra.setCurrentNode(currentNode);
                 }
                 else
                 {
                     //The player is more up/down so go up/down if possible
-                    if (distY < 0 && up != null && prevNode != up)
+                    if (distY < 0 && up != null)
                     {
                         //We cannot go right or left so try to in another direction toward the player
                         //Go up
                         transform.position = Vector2.MoveTowards(transform.position, up.getPosition(), speed * Time.deltaTime);
-                        prevNode = currentNode;
                         currentNode = up;
                         found = 1;
                     }
-                    else if (distY >= 0 && down != null && prevNode != down)
+                    else if (distY >= 0 && down != null)
                     {
                         //We cannot go right or left so try to in another direction toward the player
                         //Go down
                         transform.position = Vector2.MoveTowards(transform.position, down.getPosition(), speed * Time.deltaTime);
-                        prevNode = currentNode;
                         currentNode = down;
                         found = 1;
                     }
-                    else if (distX < 0 && right != null && prevNode != right)
+                    else if (distX < 0 && right != null)
                     {
                         //Player is to the right and you can move right
                         transform.position = Vector2.MoveTowards(transform.position, right.getPosition(), speed * Time.deltaTime);
-                        prevNode = currentNode;
                         currentNode = right;
                         found = 1;
                     }
-                    else if (distX >= 0 && left != null && prevNode != left)
+                    else if (distX >= 0 && left != null)
                     {
                         //Player is to the left and you can move left
                         transform.position = Vector2.MoveTowards(transform.position, left.getPosition(), speed * Time.deltaTime);
-                        prevNode = currentNode;
                         currentNode = left;
                         found = 1;
                     }
@@ -196,65 +147,27 @@ public class ReturnToPatrol : MonoBehaviour
                     if (found == 0)
                     {
                         //We haven't found a direction to move so just find somewhere we can go
-                        if (up != null && prevNode != up)
-                        {
-                            transform.position = Vector2.MoveTowards(transform.position, up.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
-                            currentNode = up;
-                            found = 1;
-                        }
-                        else if (down != null && prevNode != down)
-                        {
-                            transform.position = Vector2.MoveTowards(transform.position, down.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
-                            currentNode = down;
-                            found = 1;
-                        }
-                        else if (right != null && prevNode != right)
-                        {
-                            transform.position = Vector2.MoveTowards(transform.position, right.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
-                            currentNode = right;
-                            found = 1;
-                        }
-                        else if (left != null && prevNode != left)
-                        {
-                            transform.position = Vector2.MoveTowards(transform.position, left.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
-                            currentNode = left;
-                            found = 1;
-                        }
-                    }
-
-                    //JUST GO
-                    if (found == 0)
-                    {
-                        //We haven't found a direction to move so just find somewhere we can go
                         if (up != null)
                         {
                             transform.position = Vector2.MoveTowards(transform.position, up.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
                             currentNode = up;
                             found = 1;
                         }
                         else if (down != null)
                         {
                             transform.position = Vector2.MoveTowards(transform.position, down.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
                             currentNode = down;
                             found = 1;
                         }
                         else if (right != null)
                         {
                             transform.position = Vector2.MoveTowards(transform.position, right.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
                             currentNode = right;
                             found = 1;
                         }
                         else if (left != null)
                         {
-                            transform.position = Vector2.MoveTowards(transform.position, left.getPosition(), speed * Time.deltaTime);
-                            prevNode = currentNode;
+                            transform.position = Vector2.MoveTowards(transform.position, right.getPosition(), speed * Time.deltaTime);
                             currentNode = left;
                             found = 1;
                         }
@@ -282,7 +195,6 @@ public class ReturnToPatrol : MonoBehaviour
             {
                 Debug.Log("Return Active");
                 targetNode = p.getCurrrentNode();
-                prevNode = currentNode;
             }
         }
     }

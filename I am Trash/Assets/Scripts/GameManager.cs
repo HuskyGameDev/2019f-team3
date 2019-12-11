@@ -14,8 +14,10 @@ public class GameManager : MonoBehaviour {
     GameStates gameState = GameStates.Playing;
 
     public float levelTimer = 30.0f;
-
+    
+    public int inventory = 0;
     int score = 0;
+    
     public bool canBeatLevel = false;
     public int beatLevelScore = 0;
 
@@ -112,11 +114,15 @@ public class GameManager : MonoBehaviour {
 
     }
 
+    public void updateTrash(int trash)
+    {
+        inventory = trash;
+    }
 
     public void Collect(int amount) {
         score += amount;
         if (canBeatLevel) {
-            mainScoreDisplay.text = score.ToString() + " of " + beatLevelScore.ToString();
+            mainScoreDisplay.text = score.ToString() + " in Dumpster";
         }
         else {
             mainScoreDisplay.text = score.ToString();
@@ -128,5 +134,6 @@ public class GameManager : MonoBehaviour {
         levelTimer -= 1;
         countdownDisplay.text = levelTimer.ToString();
     }
+    
 }
 
