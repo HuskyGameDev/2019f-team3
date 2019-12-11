@@ -15,6 +15,12 @@ public class GameManager : MonoBehaviour {
 
     public float levelTimer = 30.0f;
     
+	public GameObject inventoryCanvas1;
+    public GameObject inventoryCanvas2;
+    public GameObject inventoryCanvas3;
+    public GameObject inventoryCanvas4;
+
+	
     public int inventory = 0;
     int score = 0;
     
@@ -55,6 +61,10 @@ public class GameManager : MonoBehaviour {
 
         // make other UI inactive
         gameOverCanvas.SetActive(false);
+		inventoryCanvas1.SetActive(false);
+        inventoryCanvas2.SetActive(false);
+        inventoryCanvas3.SetActive(false);
+        inventoryCanvas4.SetActive(false);
         if (canBeatLevel)
             beatLevelCanvas.SetActive(false);
 
@@ -117,6 +127,26 @@ public class GameManager : MonoBehaviour {
     public void updateTrash(int trash)
     {
         inventory = trash;
+		switch(inventory) {
+			case (0):
+                inventoryCanvas1.SetActive(false);
+                inventoryCanvas2.SetActive(false);
+                inventoryCanvas3.SetActive(false);
+                inventoryCanvas4.SetActive(false);
+                break;
+            case (1): 
+                inventoryCanvas1.SetActive(true);
+                break;
+            case (2): 
+                inventoryCanvas2.SetActive(true);
+                break;
+            case (3): 
+                inventoryCanvas3.SetActive(true);
+                break;
+            case (4): 
+                inventoryCanvas4.SetActive(true);
+                break;
+        }
     }
 
     public void Collect(int amount) {
