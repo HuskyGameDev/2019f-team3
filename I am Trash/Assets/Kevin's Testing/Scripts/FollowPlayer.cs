@@ -15,7 +15,7 @@ public class FollowPlayer : MonoBehaviour
     {
         active = 0;
         currentNode = null;
-        speed = 3f;
+        speed = 4f;
     }
 
     // Update is called once per frame
