@@ -9,7 +9,6 @@ public class PlayerControler : MonoBehaviour
     Rigidbody2D body;
 
     public float runSpeed = 3.0f;
-    public float moveCooldown = 0.2f;
     public int bagSize = 10;
 
     public Tilemap groundMap;
@@ -65,11 +64,6 @@ public class PlayerControler : MonoBehaviour
                 movement.y = 0.0f;
             }
 
-            if (moveCooldown > 0f)
-            {
-                StartCoroutine(MovementCooldown(moveCooldown));
-            }
-
             startPos = transform.position;
             endPos = new Vector3(startPos.x + movement.x, startPos.y + movement.y, startPos.z);
 
@@ -99,19 +93,6 @@ public class PlayerControler : MonoBehaviour
                 progress = 0f;
             }
         }
-    }
-
-    private IEnumerator MovementCooldown(float cooldown)
-    {
-        onCooldown = true;
-
-        while (cooldown > 0f)
-        {
-            cooldown -= Time.deltaTime;
-            yield return null;
-        }
-
-        onCooldown = false;
     }
 	
     void OnTriggerEnter2D(Collider2D collision)
