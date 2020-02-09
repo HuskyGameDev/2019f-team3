@@ -550,7 +550,7 @@ RectTransform:
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 2086228701}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8541,7 +8541,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-
   - component: {fileID: 339162338}
   - component: {fileID: 339162343}
   - component: {fileID: 339162342}
@@ -8550,13 +8549,11 @@ GameObject:
   - component: {fileID: 339162339}
   m_Layer: 0
   m_Name: Jim
-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-  
 --- !u!4 &339162338
 Transform:
   m_ObjectHideFlags: 0
@@ -15952,6 +15949,101 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c07bae14662f440b02b0b0a885eea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1131865439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1131865440}
+  - component: {fileID: 1131865442}
+  - component: {fileID: 1131865441}
+  m_Layer: 0
+  m_Name: Prim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1131865440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131865439}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.2, y: -2.2, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.34, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1243767087}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1131865441
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131865439}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1690152567
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 64587f8422440184ab31abc498d1f58b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 4.5, y: 5.3}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &1131865442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131865439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d990ce10bed4b54299ed32d5a4e87d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMap: {fileID: 197892699}
+  wallsMap: {fileID: 1019744164}
+  player: {fileID: 78387387}
 --- !u!1 &1188071845
 GameObject:
   m_ObjectHideFlags: 0
@@ -16325,6 +16417,7 @@ Transform:
   - {fileID: 1598361756}
   - {fileID: 339162338}
   - {fileID: 1527681986}
+  - {fileID: 1131865440}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16924,7 +17017,7 @@ MonoBehaviour:
   levelTimer: 60
   inventoryCanvas1: {fileID: 665233999}
   inventoryCanvas2: {fileID: 487595812}
-  inventoryCanvas3: {fileID: 362918040}
+  inventoryCanvas3: {fileID: 0}
   inventoryCanvas4: {fileID: 137733093}
   inventory: 0
   canBeatLevel: 1
@@ -18890,7 +18983,6 @@ RectTransform:
   m_Children:
   - {fileID: 665234000}
   - {fileID: 487595813}
-  - {fileID: 362918041}
   - {fileID: 137733094}
   m_Father: {fileID: 664145201}
   m_RootOrder: 2
