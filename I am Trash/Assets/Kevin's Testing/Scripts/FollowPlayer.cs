@@ -192,7 +192,7 @@ public class FollowPlayer : MonoBehaviour
             currentNode = m;
             if (active == 1)
             {
-                Debug.Log("Follow Active");
+                //Debug.Log("Follow Active");
             }
         }
     }

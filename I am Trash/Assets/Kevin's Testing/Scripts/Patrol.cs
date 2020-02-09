@@ -58,7 +58,7 @@ public class Patrol : MonoBehaviour
             active = n;
             if ( active == 1 )
             {
-                Debug.Log("Patrol Active");
+                //Debug.Log("Patrol Active");
             }
         }
     }

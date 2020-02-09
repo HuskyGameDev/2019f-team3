@@ -194,7 +194,7 @@ public class ReturnToPatrol : MonoBehaviour
             currentNode = m;
             if (active == 1)
             {
-                Debug.Log("Return Active");
+                //Debug.Log("Return Active");
                 targetNode = p.getCurrrentNode();
             }
         }
