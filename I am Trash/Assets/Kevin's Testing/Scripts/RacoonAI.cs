@@ -13,6 +13,7 @@ public class RacoonAI : MonoBehaviour
     //2 = going back to patrol
     private int state;
     private float waitTime;
+    private int trash;
 
     //Scripts to change to
     public Patrol p;
@@ -28,6 +29,7 @@ public class RacoonAI : MonoBehaviour
     {
         state = 0;
         waitTime = 0f;
+        trash = 0;
     }
 
     // Update is called once per frame
@@ -40,7 +42,7 @@ public class RacoonAI : MonoBehaviour
             dist = dist * -1;
         }
 
-        if ( dist <= 4 && waitTime <= 0 )
+        if ( dist <= 6 && waitTime <= 0 )
         {
             if ( dist <= 0.75 )
             {
@@ -87,11 +89,22 @@ public class RacoonAI : MonoBehaviour
         else {
             waitTime -= Time.deltaTime;
         }
+        
 
     }
 
     public void setCurrentNode( MoveNode m )
     {
         currentNode = m;
+    }
+
+    public int getTrash()
+    {
+        return trash;
+    }
+
+    public void removeTrash()
+    {
+        trash--;
     }
 }

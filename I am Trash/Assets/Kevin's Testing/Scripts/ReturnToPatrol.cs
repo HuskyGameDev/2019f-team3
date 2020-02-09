@@ -24,7 +24,8 @@ public class ReturnToPatrol : MonoBehaviour
     {
         if (active == 1)
         {
-            if (transform.position.x == currentNode.getPosition().x && transform.position.y == currentNode.getPosition().y)
+            //if (transform.position.x == currentNode.getPosition().x && transform.position.y == currentNode.getPosition().y)
+            if (Vector2.Distance(transform.position, currentNode.getPosition()) < 0.2f)
             {
                 //Find Target's coordinates
                 float pX = targetNode.getPosition().x;
