@@ -60,7 +60,6 @@ public class TrashDrop : MonoBehaviour
                 }
             }
 
-
             targetCell = new Vector3Int((int)(position.x - 0.5f), (int)(position.y - i - 0.5f), zVal);
 
             hasWall = wallsMap.GetTile(targetCell) != null;
@@ -73,7 +72,6 @@ public class TrashDrop : MonoBehaviour
                     return new Vector3(position.x, position.y - i, position.z);
                 }
             }
-
 
             targetCell = new Vector3Int((int)(position.x - 0.5f), (int)(position.y + i - 0.5f), zVal);
 
