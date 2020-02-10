@@ -10,7 +10,7 @@ public class RacoonRoam : MonoBehaviour
 
     public GameObject player;
 
-    public float vision = 1f;
+    public float vision = 0.25f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +22,15 @@ public class RacoonRoam : MonoBehaviour
     void Update()
     {
         //-----------------------------------------------------------------------------------------------------------------------------------------
-        
-        //-----------------------------------------------------------------------------------------------------------------------------------------
-        Debug.Log("This is working");
-
+        //Checking to see if player is close by
         float dist = Vector2.Distance(player.transform.position, transform.position);
         if (dist < 0)
         {
             dist = dist * -1;
         }
 
-        if (dist <= 10)
+        if (dist <= 6)
         {
-            Debug.Log("The player is within range");
             //Find player's coordinates
             float pX = player.transform.position.x;
             float pY = player.transform.position.y;
@@ -52,35 +48,32 @@ public class RacoonRoam : MonoBehaviour
                 if (distX < 0)
                 {
                     //The player is to the right, check for a wall
-                    Vector3Int targetCell = new Vector3Int((int)(transform.position.x-0.5f), (int)(transform.position.y), 0);
+                    Vector3Int targetCell = new Vector3Int((int)(transform.position.x + 0.5f), (int)(transform.position.y), 0);
                     bool hasWall = wallsMap.GetTile(targetCell) != null;
 
                     if (!hasWall)
                     {
                         //Ther is no wall, go right
-                        Vector3 target = new Vector3(transform.position.x + 2f, transform.position.y, 0);
+                        Vector3 target = new Vector3(transform.position.x + 0.25f, transform.position.y, 0);
                         transform.position = Vector3.MoveTowards(transform.position, target, 4 * Time.deltaTime);
-                    }
-                } else
-                {
-                    Debug.Log("The player is to the left, check for wall");
-                    //The player is to the right, check for a wall
-                    Vector3Int targetCell = new Vector3Int((int)(transform.position.x-.1f), (int)(transform.position.y), 0);
-                    bool hasWall = wallsMap.GetTile(targetCell) != null;
-
-                    if (!hasWall)
-                    {
-                        Debug.Log("There is no wall, move left");
-                        //Ther is no wall, go right
-                        Vector3 target = new Vector3(transform.position.x - 2f, transform.position.y, 0);
-                        transform.position = Vector3.MoveTowards(transform.position, target, 4 * Time.deltaTime);
-                    }
-                    else
-                    {
-                        Debug.Log("There is a wall");
                     }
                 }
+                else
+                {
+                    //The player is to the left, check for a wall
+                    Vector3Int targetCell = new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y), 0);
+                    bool hasWall = wallsMap.GetTile(targetCell) != null;
+
+                    if (!hasWall)
+                    {
+                        //Ther is no wall, go right
+                        Vector3 target = new Vector3(transform.position.x - 0.25f, transform.position.y, 0);
+                        transform.position = Vector3.MoveTowards(transform.position, target, 4 * Time.deltaTime);
+                    }
+                }
+
             }
         }
+        //-----------------------------------------------------------------------------------------------------------------------------------------
     }
 }
