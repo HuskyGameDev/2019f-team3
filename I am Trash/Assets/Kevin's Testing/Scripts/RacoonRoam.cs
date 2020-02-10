@@ -10,6 +10,8 @@ public class RacoonRoam : MonoBehaviour
 
     public GameObject player;
 
+    public float vision = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,15 +21,20 @@ public class RacoonRoam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Checking to see if player is close by
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        
+        //-----------------------------------------------------------------------------------------------------------------------------------------
+        Debug.Log("This is working");
+
         float dist = Vector2.Distance(player.transform.position, transform.position);
         if (dist < 0)
         {
             dist = dist * -1;
         }
 
-        if (dist <= 6)
+        if (dist <= 10)
         {
+            Debug.Log("The player is within range");
             //Find player's coordinates
             float pX = player.transform.position.x;
             float pY = player.transform.position.y;
@@ -45,160 +52,32 @@ public class RacoonRoam : MonoBehaviour
                 if (distX < 0)
                 {
                     //The player is to the right, check for a wall
-                    Vector3Int targetCell = new Vector3Int((int)(transform.position.x + 1f), (int)(transform.position.y), 0);
+                    Vector3Int targetCell = new Vector3Int((int)(transform.position.x-0.5f), (int)(transform.position.y), 0);
                     bool hasWall = wallsMap.GetTile(targetCell) != null;
 
                     if (!hasWall)
                     {
                         //Ther is no wall, go right
-                        transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                    } else
-                    {
-                        //The player is up/down
-                        if (distY < 0)
-                        {
-                            //The player is above, check for a wall
-                            targetCell = new Vector3Int((int)(transform.position.x), (int)(transform.position.y + 1f), 0);
-                            hasWall = wallsMap.GetTile(targetCell) != null;
-
-                            if (!hasWall)
-                            {
-                                //Ther is no wall, go right
-                                transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                            }
-                        }
-                        else
-                        {
-                            //The player is below, check for a wall
-                            targetCell = new Vector3Int((int)(transform.position.x), (int)(transform.position.y - 1f), 0);
-                            hasWall = wallsMap.GetTile(targetCell) != null;
-
-                            if (!hasWall)
-                            {
-                                //Ther is no wall, go right
-                                transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                            }
-                        }
+                        Vector3 target = new Vector3(transform.position.x + 2f, transform.position.y, 0);
+                        transform.position = Vector3.MoveTowards(transform.position, target, 4 * Time.deltaTime);
                     }
                 } else
                 {
-                    //The player is to the left, check for a wall
-                    Vector3Int targetCell = new Vector3Int((int)(transform.position.x - 1f), (int)(transform.position.y), 0);
+                    Debug.Log("The player is to the left, check for wall");
+                    //The player is to the right, check for a wall
+                    Vector3Int targetCell = new Vector3Int((int)(transform.position.x-.1f), (int)(transform.position.y), 0);
                     bool hasWall = wallsMap.GetTile(targetCell) != null;
 
                     if (!hasWall)
                     {
+                        Debug.Log("There is no wall, move left");
                         //Ther is no wall, go right
-                        transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                    } else
-                    {
-                        //The player is up/down
-                        if (distY < 0)
-                        {
-                            //The player is above, check for a wall
-                            targetCell = new Vector3Int((int)(transform.position.x), (int)(transform.position.y + 1f), 0);
-                            hasWall = wallsMap.GetTile(targetCell) != null;
-
-                            if (!hasWall)
-                            {
-                                //Ther is no wall, go right
-                                transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                            }
-                        }
-                        else
-                        {
-                            //The player is below, check for a wall
-                            targetCell = new Vector3Int((int)(transform.position.x), (int)(transform.position.y - 1f), 0);
-                            hasWall = wallsMap.GetTile(targetCell) != null;
-
-                            if (!hasWall)
-                            {
-                                //Ther is no wall, go right
-                                transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                            }
-                        }
+                        Vector3 target = new Vector3(transform.position.x - 2f, transform.position.y, 0);
+                        transform.position = Vector3.MoveTowards(transform.position, target, 4 * Time.deltaTime);
                     }
-                }
-
-            } else
-            {
-                //The player is up/down
-                if (distY < 0)
-                {
-                    //The player is above, check for a wall
-                    Vector3Int targetCell = new Vector3Int((int)(transform.position.x), (int)(transform.position.y + 1f), 0);
-                    bool hasWall = wallsMap.GetTile(targetCell) != null;
-
-                    if (!hasWall)
+                    else
                     {
-                        //Ther is no wall, go right
-                        transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                    } else
-                    {
-                        //The player is to the left/right
-                        if (distX < 0)
-                        {
-                            //The player is to the right, check for a wall
-                            targetCell = new Vector3Int((int)(transform.position.x + 1f), (int)(transform.position.y), 0);
-                            hasWall = wallsMap.GetTile(targetCell) != null;
-
-                            if (!hasWall)
-                            {
-                                //Ther is no wall, go right
-                                transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                            }
-                        }
-                        else
-                        {
-                            //The player is to the left, check for a wall
-                            targetCell = new Vector3Int((int)(transform.position.x - 1f), (int)(transform.position.y), 0);
-                            hasWall = wallsMap.GetTile(targetCell) != null;
-
-                            if (!hasWall)
-                            {
-                                //Ther is no wall, go right
-                                transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    //The player is below, check for a wall
-                    Vector3Int targetCell = new Vector3Int((int)(transform.position.x), (int)(transform.position.y - 1f), 0);
-                    bool hasWall = wallsMap.GetTile(targetCell) != null;
-
-                    if (!hasWall)
-                    {
-                        //Ther is no wall, go right
-                        transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                    } else
-                    {
-                        //The player is to the left/right
-                        if (distX < 0)
-                        {
-                            //The player is to the right, check for a wall
-                            targetCell = new Vector3Int((int)(transform.position.x + 1f), (int)(transform.position.y), 0);
-                            hasWall = wallsMap.GetTile(targetCell) != null;
-
-                            if (!hasWall)
-                            {
-                                //Ther is no wall, go right
-                                transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                            }
-                        }
-                        else
-                        {
-                            //The player is to the left, check for a wall
-                            targetCell = new Vector3Int((int)(transform.position.x - 1f), (int)(transform.position.y), 0);
-                            hasWall = wallsMap.GetTile(targetCell) != null;
-
-                            if (!hasWall)
-                            {
-                                //Ther is no wall, go right
-                                transform.position = Vector3.MoveTowards(transform.position, targetCell, 4 * Time.deltaTime);
-                            }
-                        }
+                        Debug.Log("There is a wall");
                     }
                 }
             }
