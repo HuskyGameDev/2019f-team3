@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour {
     // Only need to set if canBeatLevel is set to true
     //public AudioClip beatLevelSFX;
 
+    public GameObject objectManagers;
 
     void Start() {
         if (gm == null)
@@ -164,6 +165,16 @@ public class GameManager : MonoBehaviour {
         levelTimer -= 1;
         countdownDisplay.text = levelTimer.ToString();
     }
-    
+
+    public void DropTrash(int trash, Vector3 currentPos)
+    {
+        TrashDrop trashDropScript = objectManagers.GetComponent<TrashDrop>();
+
+        for (int i = 0; i < trash; i++)
+        {
+            trashDropScript.DropAPiece(currentPos);
+        }
+    }
+
 }
 
