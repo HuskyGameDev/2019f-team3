@@ -534,14 +534,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276474214}
   m_CullTransparentMesh: 0
-<<<<<<< HEAD
---- !u!1839735485 &424922515 stripped
-Tilemap:
-  m_CorrespondingSourceObject: {fileID: 211438907783558163, guid: 58c3bbadca0354848a52e0293beef41e,
-    type: 3}
-  m_PrefabInstance: {fileID: 211438906047024812}
-  m_PrefabAsset: {fileID: 0}
-=======
 --- !u!1 &293481238
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +666,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445833939}
   m_CullTransparentMesh: 0
->>>>>>> master
 --- !u!1 &585137635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,7 +1518,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9dd5317d3f8641b4b906ef4f83672d2, type: 3}
-<<<<<<< HEAD
 --- !u!1 &1044091825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,8 +1578,6 @@ Tilemap:
     type: 3}
   m_PrefabInstance: {fileID: 211438906047024812}
   m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> master
 --- !u!1001 &1465696946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1657,7 +1645,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 8249045251872352937, guid: e9dd5317d3f8641b4b906ef4f83672d2,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1749,10 +1736,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516983010}
   m_CullTransparentMesh: 0
-=======
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e9dd5317d3f8641b4b906ef4f83672d2, type: 3}
->>>>>>> master
 --- !u!1 &1562534179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,7 +2547,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_Size.x
@@ -2579,36 +2561,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.x
       value: 0
-=======
-    - target: {fileID: 7180773021915065029, guid: 9ad5883d1738a496b80d630b90295e92,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.048175335
-      objectReference: {fileID: 0}
-    - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1.9419808
->>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_Offset.y
-<<<<<<< HEAD
-      value: 0
-=======
-      value: 0.022329569
+      value: 0.0
       objectReference: {fileID: 0}
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_Size.y
       value: 0.92908525
->>>>>>> master
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad5883d1738a496b80d630b90295e92, type: 3}
