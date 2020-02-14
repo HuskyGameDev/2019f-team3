@@ -62,12 +62,11 @@ public class GameManager : MonoBehaviour {
 
         // make other UI inactive
         gameOverCanvas.SetActive(false);
-		inventoryCanvas1.SetActive(false);
+        beatLevelCanvas.SetActive(false);
+        inventoryCanvas1.SetActive(false);
         inventoryCanvas2.SetActive(false);
         inventoryCanvas3.SetActive(false);
         inventoryCanvas4.SetActive(false);
-        if (canBeatLevel)
-            beatLevelCanvas.SetActive(false);
 
         InvokeRepeating("Countdown", 1.0f, 1.0f);
     }
