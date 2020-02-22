@@ -484,14 +484,11 @@ public class RacoonRoam : MonoBehaviour
             {
                 if (trash == 0)
                 {
-                    Debug.Log("Player trashbag: " + pc.GetTrashBag());
                     if (pc.GetTrashBag() > 0)
                     {
-                        Debug.Log("The player has trash");
                         pc.decreaseTrashBag(1);
                         pc.setImmunity(20);
                         trash += 1;
-                        Debug.Log("I got trash");
                     }
                 }
             }
