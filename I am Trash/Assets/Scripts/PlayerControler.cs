@@ -128,19 +128,25 @@ public class PlayerControler : MonoBehaviour
             GameManager.gm.Collect(trashBag);
             trashBag = 0;
         }
-
-        if ( collision.gameObject.tag == "Enemy" && immunity == 0 )
-        {
-            if (trashBag > 0)
-            {
-                trashBag -= 1;
-            }
-            immunity = 10;
-        }
     }
 
     public int getImmunity()
     {
         return immunity;
+    }
+
+    public void decreaseTrashBag( int amt )
+    {
+        trashBag -= amt;
+        if ( trashBag < 0 )
+        {
+            trashBag = 0;
+        }
+        GameManager.gm.updateTrash(trashBag);
+    }
+
+    public void setImmunity( int amt )
+    {
+        immunity = amt;
     }
 }

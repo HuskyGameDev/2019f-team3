@@ -18,7 +18,6 @@ public class RacoonRoam : MonoBehaviour
     private int dir;
 
     public int vision = 6;
-    private int tempVis = 12;
 
     private int trash = 0;
 
@@ -33,7 +32,6 @@ public class RacoonRoam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Trash: " + trash);
         if (delay <= 0 && transform.position == target && trash == 0)
         {
             //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -479,10 +477,24 @@ public class RacoonRoam : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && pc.getImmunity() == 0 && trash == 0)
+        //if (collision.gameObject.tag == "Player" && pc.getImmunity() == 0 && trash == 0 && pc.GetTrashBag() > 0)
+        if ( collision.gameObject.tag == "Player")
         {
-            trash += 1;
-            Debug.Log("I got trash");
+            if ( pc.getImmunity() == 0 )
+            {
+                if (trash == 0)
+                {
+                    Debug.Log("Player trashbag: " + pc.GetTrashBag());
+                    if (pc.GetTrashBag() > 0)
+                    {
+                        Debug.Log("The player has trash");
+                        pc.decreaseTrashBag(1);
+                        pc.setImmunity(20);
+                        trash += 1;
+                        Debug.Log("I got trash");
+                    }
+                }
+            }
         }
     }
 }
