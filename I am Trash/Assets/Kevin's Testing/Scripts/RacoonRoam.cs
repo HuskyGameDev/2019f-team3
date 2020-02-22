@@ -16,6 +16,9 @@ public class RacoonRoam : MonoBehaviour
     private Vector3 target;
     private int dir;
 
+    public int vision = 6;
+    private int tempVis = 12;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,7 @@ public class RacoonRoam : MonoBehaviour
                 dist = dist * -1;
             }
 
-            if (dist <= 6)
+            if (dist <= vision)
             {
                 //Find player's coordinates
                 float pX = player.transform.position.x;
@@ -218,22 +221,22 @@ public class RacoonRoam : MonoBehaviour
             {
                 int changeDir = Random.Range(0, 5);
 
-                if ( changeDir == 0 )
+                if (changeDir == 0)
                 {
-                    dir = Random.Range(0, 4);
+                    dir = Random.Range(0, 5);
                 }
 
-                if ( dir == 0 )
+                if (dir%4 == 0)
                 {
                     //Go Right
                     Vector3Int targetCell = new Vector3Int((int)(transform.position.x + 0.5f), (int)(transform.position.y - 0.5f), 0);
                     bool hasWall = wallsMap.GetTile(targetCell) != null;
 
-                    if ( !hasWall )
+                    if (!hasWall)
                     {
                         target = new Vector3(transform.position.x + 1f, transform.position.y, 0);
                     }
-                } else if ( dir == 1 )
+                } else if (dir%4 == 1)
                 {
                     //Go Left
                     Vector3Int targetCell = new Vector3Int((int)(transform.position.x - 1.5f), (int)(transform.position.y - 0.5f), 0);
@@ -243,7 +246,7 @@ public class RacoonRoam : MonoBehaviour
                     {
                         target = new Vector3(transform.position.x - 1f, transform.position.y, 0);
                     }
-                } else if ( dir == 2 )
+                } else if (dir%4 == 2 )
                 {
                     //Go Up
                     Vector3Int targetCell = new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y + 0.5f), 0);
@@ -253,7 +256,7 @@ public class RacoonRoam : MonoBehaviour
                     {
                         target = new Vector3(transform.position.x, transform.position.y + 1f, 0);
                     }
-                } else
+                } else if ( dir%4 == 3 )
                 {
                     //Go Down
                     Vector3Int targetCell = new Vector3Int((int)(transform.position.x - 0.5f), (int)(transform.position.y - 1.5f), 0);
