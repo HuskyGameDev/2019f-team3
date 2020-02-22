@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     }
 	public void mainMenu(){
 		//Application.LoadLevel("Main Menu");
-        SceneManager.LoadScene("Manin Menu");
+        SceneManager.LoadScene("Main Menu");
 	}
 	public void ExitGame() {
 		Application.Quit();
