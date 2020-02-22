@@ -1,5 +1,5 @@
 
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -8,25 +8,25 @@ public class PlayerControler : MonoBehaviour
 {
     Rigidbody2D body;
 
-    public float runSpeed = 3.0f;
+    public float runSpeed = 5.0f;
     public int bagSize = 10;
 
-    public Tilemap groundMap;
     public Tilemap wallsMap;
 
-    private int trashBag = 0;
+    private int trashBag;
     private bool isMoving;
-    private bool onCooldown;
     private bool letsMove;
 
     private Vector2 movement;
 
-    private int zVal = 0;
+    private int zVal;
 
-    private float progress = 0f;
+    private float progress;
 
     private Vector3 startPos;
     private Vector3 endPos;
+
+    public int immunity = 0;
 
     void Start()
     {
@@ -38,18 +38,24 @@ public class PlayerControler : MonoBehaviour
         zVal = wallsMap.origin.z;
 
         isMoving = false;
-        onCooldown = false;
     }
 
     void Update()
     {
-        //Debug.Log(transform.position.x + " " + transform.position.y);
-        if (onCooldown) return;
+        if ( immunity > 0 )
+        {
+            immunity--;
+        }
+
+        if (trashBag > bagSize)
+        {
+            GameManager.gm.DropTrash(bagSize - trashBag, transform.position);
+        }
 
         if (!isMoving || progress > 0.8f)
         {
             Vector2 currentKeys = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            
+
             if (currentKeys != Vector2.zero)
             {
                 movement = currentKeys;
@@ -83,18 +89,30 @@ public class PlayerControler : MonoBehaviour
         if (isMoving)
         {
             progress += Time.deltaTime * runSpeed;
-            //progress = (float) Mathf.Round(progress * 100f) / 100f;
+
             if (progress < 0.95f)
             {
                 transform.position = Vector3.Lerp(startPos, endPos, progress);
-            } else {
+            }
+            else
+            {
                 transform.position = Vector3.Lerp(startPos, endPos, 1f);
                 isMoving = false;
                 progress = 0f;
             }
         }
     }
-	
+
+    public int GetTrashBag()
+    {
+        return trashBag;
+    }
+
+    public void SetTrashBag(int trash)
+    {
+        trashBag = trash;
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Trash")
@@ -103,12 +121,34 @@ public class PlayerControler : MonoBehaviour
             {
                 trashBag += 1;
                 Destroy(collision.gameObject);
-                GameManager.gm.updateTrash(trashBag);
+				GameManager.gm.updateTrash(trashBag);
             }
-        } else if (collision.gameObject.tag == "Dumpster")
+        }
+        else if (collision.gameObject.tag == "Dumpster")
         {
             GameManager.gm.Collect(trashBag);
             trashBag = 0;
+			GameManager.gm.updateTrash(trashBag);
         }
+    }
+
+    public int getImmunity()
+    {
+        return immunity;
+    }
+
+    public void decreaseTrashBag( int amt )
+    {
+        trashBag -= amt;
+        if ( trashBag < 0 )
+        {
+            trashBag = 0;
+        }
+        GameManager.gm.updateTrash(trashBag);
+    }
+
+    public void setImmunity( int amt )
+    {
+        immunity = amt;
     }
 }
