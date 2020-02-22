@@ -12990,8 +12990,6 @@ Tilemap:
 --- !u!1 &1025993092
 GameObject:
   m_ObjectHideFlags: 0
-<<<<<<< HEAD
-=======
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -13076,7 +13074,6 @@ SpriteRenderer:
 --- !u!1001 &1032985651
 PrefabInstance:
   m_ObjectHideFlags: 0
->>>>>>> master
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 1093183626}
@@ -13089,20 +13086,11 @@ PrefabInstance:
     - target: {fileID: 8249045251872352937, guid: e9dd5317d3f8641b4b906ef4f83672d2,
         type: 3}
       propertyPath: m_LocalPosition.x
-<<<<<<< HEAD
       value: -13.18
-=======
-      value: -12.64
->>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 8249045251872352937, guid: e9dd5317d3f8641b4b906ef4f83672d2,
         type: 3}
-      propertyPath: m_LocalPosition.y
-<<<<<<< HEAD
       value: -8.67
-=======
-      value: -8.27
->>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 8249045251872352937, guid: e9dd5317d3f8641b4b906ef4f83672d2,
         type: 3}
@@ -14459,7 +14447,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_Size.x
       value: 2
       objectReference: {fileID: 0}
@@ -14472,34 +14459,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.x
       value: 0
-=======
-      propertyPath: m_Offset.x
-      value: 0.008010626
-      objectReference: {fileID: 0}
-    - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 1.9262872
->>>>>>> master
       objectReference: {fileID: 0}
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_Offset.y
-<<<<<<< HEAD
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_UsedByComposite
       value: 1
-=======
-      value: 0.06258917
-      objectReference: {fileID: 0}
-    - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.7788763
->>>>>>> master
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad5883d1738a496b80d630b90295e92, type: 3}
