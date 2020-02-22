@@ -26,6 +26,8 @@ public class PlayerControler : MonoBehaviour
     private Vector3 startPos;
     private Vector3 endPos;
 
+    public int immunity = 0;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -40,6 +42,11 @@ public class PlayerControler : MonoBehaviour
 
     void Update()
     {
+        if ( immunity > 0 )
+        {
+            immunity--;
+        }
+
         if (trashBag > bagSize)
         {
             GameManager.gm.DropTrash(bagSize - trashBag, transform.position);
@@ -121,5 +128,19 @@ public class PlayerControler : MonoBehaviour
             GameManager.gm.Collect(trashBag);
             trashBag = 0;
         }
+
+        if ( collision.gameObject.tag == "Enemy" && immunity == 0 )
+        {
+            if (trashBag > 0)
+            {
+                trashBag -= 1;
+            }
+            immunity = 10;
+        }
+    }
+
+    public int getImmunity()
+    {
+        return immunity;
     }
 }
