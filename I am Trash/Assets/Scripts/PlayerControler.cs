@@ -114,12 +114,14 @@ public class PlayerControler : MonoBehaviour
             {
                 trashBag += 1;
                 Destroy(collision.gameObject);
+				GameManager.gm.updateTrash(trashBag);
             }
         }
         else if (collision.gameObject.tag == "Dumpster")
         {
             GameManager.gm.Collect(trashBag);
             trashBag = 0;
+			GameManager.gm.updateTrash(trashBag);
         }
     }
 }
