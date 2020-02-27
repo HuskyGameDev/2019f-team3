@@ -470,7 +470,7 @@ public class RacoonRoam : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, 4 * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, target, 3 * Time.deltaTime);
             delay--;
         }
     }
