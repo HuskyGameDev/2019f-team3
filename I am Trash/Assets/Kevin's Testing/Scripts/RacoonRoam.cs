@@ -18,7 +18,7 @@ public class RacoonRoam : MonoBehaviour
     private int dir;
 
     public int vision = 6;
-
+    public int speed = 3;
     private int trash = 0;
 
     public Animator animator;
@@ -478,7 +478,7 @@ public class RacoonRoam : MonoBehaviour
         else
         {
             //animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
-            transform.position = Vector3.MoveTowards(transform.position, target, 3 * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
             delay--;
 
             //Figure out animation
