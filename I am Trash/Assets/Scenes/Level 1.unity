@@ -851,6 +851,7 @@ MonoBehaviour:
   pc: {fileID: 78387389}
   delayTime: 3
   vision: 6
+  animator: {fileID: 0}
 --- !u!61 &136085452
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10821,6 +10822,7 @@ MonoBehaviour:
   pc: {fileID: 78387389}
   delayTime: 3
   vision: 6
+  animator: {fileID: 0}
 --- !u!61 &971021371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16323,8 +16325,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1131865440}
   - component: {fileID: 1131865442}
-  - component: {fileID: 1131865441}
   - component: {fileID: 1131865443}
+  - component: {fileID: 1131865441}
   m_Layer: 0
   m_Name: Prim
   m_TagString: Enemy
@@ -16412,6 +16414,7 @@ MonoBehaviour:
   pc: {fileID: 78387389}
   delayTime: 3
   vision: 6
+  animator: {fileID: 0}
 --- !u!61 &1131865443
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18663,31 +18666,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8384792326290296639, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
-        type: 3}
-      propertyPath: wallsMap
-      value: 
-      objectReference: {fileID: 1019744164}
-    - target: {fileID: 8384792326290296639, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
-        type: 3}
-      propertyPath: groundMap
-      value: 
-      objectReference: {fileID: 197892699}
-    - target: {fileID: 8384792326290296639, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
-        type: 3}
-      propertyPath: moveCooldown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8384792326290296639, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
-        type: 3}
-      propertyPath: bagSize
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8384792326290296639, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
-        type: 3}
-      propertyPath: runSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8384792326290296634, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18756,6 +18734,31 @@ PrefabInstance:
     - target: {fileID: 8384792326290296634, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
         type: 3}
       propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384792326290296639, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: wallsMap
+      value: 
+      objectReference: {fileID: 1019744164}
+    - target: {fileID: 8384792326290296639, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: groundMap
+      value: 
+      objectReference: {fileID: 197892699}
+    - target: {fileID: 8384792326290296639, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: moveCooldown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384792326290296639, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: bagSize
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384792326290296639, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: runSpeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8384792326290296637, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,

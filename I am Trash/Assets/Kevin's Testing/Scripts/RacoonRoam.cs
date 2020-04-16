@@ -21,6 +21,12 @@ public class RacoonRoam : MonoBehaviour
 
     private int trash = 0;
 
+    public Animator animator;
+    private int animDelay = 20;
+    private int scale = 1;
+    private int vert = 0;
+    private int horz = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +38,7 @@ public class RacoonRoam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (delay <= 0 && transform.position == target && trash == 0)
         {
             //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -470,8 +477,50 @@ public class RacoonRoam : MonoBehaviour
         }
         else
         {
+            //animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
             transform.position = Vector3.MoveTowards(transform.position, target, 3 * Time.deltaTime);
             delay--;
+
+            //Figure out animation
+            //Find target coordinates
+            float pX = target.x;
+            float pY = target.y;
+
+            //Get our coordinates
+            float eX = transform.position.x;
+            float eY = transform.position.y;
+
+            float distX = eX - pX;
+            float distY = eY - pY;
+
+            if (Mathf.Abs(distX) > Mathf.Abs(distY))
+            {
+                //Going horizontal
+                if ( distX < 0 && horz != 1)
+                {
+                    //going right
+                    vert = 0;
+                    horz = 1;
+                } else if (horz != -1)
+                {
+                    vert = 0;
+                    horz = -1;
+                }
+            } else
+            {
+                //Going vertical
+                if ( distY < 0 && vert != 1)
+                {
+                    //go up
+                    vert = 1;
+                    horz = 0;
+                } else if (vert != -1)
+                {
+                    vert = -1;
+                    horz = 0;
+                }
+            }
+
         }
     }
 
