@@ -901,9 +901,8 @@ MonoBehaviour:
   player: {fileID: 69091932}
   pc: {fileID: 69091931}
   delayTime: 3
-<<<<<<< HEAD
-  vision: 6
-  speed: 3
+  vision: 3
+  speed: 5
 --- !u!95 &476669355
 Animator:
   serializedVersion: 3
@@ -923,10 +922,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-=======
-  vision: 3
-  speed: 5
->>>>>>> 15d3bdd3e545b37205111697df4a6fc151deb270
 --- !u!1 &526361475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,9 +1412,8 @@ MonoBehaviour:
   player: {fileID: 69091932}
   pc: {fileID: 69091931}
   delayTime: 3
-<<<<<<< HEAD
-  vision: 6
-  speed: 3
+  vision: 3
+  speed: 5
 --- !u!95 &657586850
 Animator:
   serializedVersion: 3
@@ -1439,10 +1433,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-=======
   vision: 3
   speed: 5
->>>>>>> 15d3bdd3e545b37205111697df4a6fc151deb270
 --- !u!1001 &671277909
 PrefabInstance:
   m_ObjectHideFlags: 0
