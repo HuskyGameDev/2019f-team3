@@ -789,7 +789,6 @@ GameObject:
   - component: {fileID: 476669354}
   - component: {fileID: 476669353}
   - component: {fileID: 476669352}
-  - component: {fileID: 476669355}
   m_Layer: 0
   m_Name: Slim
   m_TagString: Enemy
@@ -882,7 +881,7 @@ SpriteRenderer:
   m_Size: {x: 4.5, y: 5.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &476669354
@@ -902,25 +901,6 @@ MonoBehaviour:
   player: {fileID: 69091932}
   pc: {fileID: 69091931}
   delayTime: 3
---- !u!95 &476669355
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 476669350}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9fa6e31fc46eb485e8974d37799d7f43, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
   vision: 3
   speed: 5
 --- !u!1 &526361475
@@ -1301,7 +1281,6 @@ GameObject:
   - component: {fileID: 657586849}
   - component: {fileID: 657586848}
   - component: {fileID: 657586847}
-  - component: {fileID: 657586850}
   m_Layer: 0
   m_Name: Kim
   m_TagString: Enemy
@@ -1394,7 +1373,7 @@ SpriteRenderer:
   m_Size: {x: 4.5, y: 5.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &657586849
@@ -1414,25 +1393,6 @@ MonoBehaviour:
   player: {fileID: 69091932}
   pc: {fileID: 69091931}
   delayTime: 3
---- !u!95 &657586850
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657586845}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9fa6e31fc46eb485e8974d37799d7f43, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
   vision: 3
   speed: 5
 --- !u!1001 &671277909
@@ -1759,6 +1719,7 @@ MonoBehaviour:
   pc: {fileID: 69091931}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &712158169
 Animator:
   serializedVersion: 3
@@ -1778,7 +1739,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-  speed: 3
 --- !u!1 &776975915
 GameObject:
   m_ObjectHideFlags: 0
@@ -7703,6 +7663,7 @@ MonoBehaviour:
   pc: {fileID: 69091931}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &1405934412
 Animator:
   serializedVersion: 3
@@ -7722,7 +7683,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-  speed: 3
 --- !u!1 &1425338147
 GameObject:
   m_ObjectHideFlags: 0
