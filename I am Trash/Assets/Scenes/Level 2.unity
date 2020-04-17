@@ -828,7 +828,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
+    oldSize: {x: 0.72, y: 0.48}
     newSize: {x: 4.5, y: 5.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -874,7 +874,7 @@ SpriteRenderer:
   m_SortingLayerID: 1690152567
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8cb5d779e60653948bfba60cd1be5f2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4f33ee03833a8d4bb9cca71a39aaafd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -902,7 +902,6 @@ MonoBehaviour:
   player: {fileID: 69091932}
   pc: {fileID: 69091931}
   delayTime: 3
-  vision: 6
 --- !u!95 &476669355
 Animator:
   serializedVersion: 3
@@ -922,6 +921,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+  vision: 3
+  speed: 5
 --- !u!1 &526361475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1340,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
+    oldSize: {x: 0.72, y: 0.48}
     newSize: {x: 4.5, y: 5.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1385,7 +1386,7 @@ SpriteRenderer:
   m_SortingLayerID: 1690152567
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8cb5d779e60653948bfba60cd1be5f2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4f33ee03833a8d4bb9cca71a39aaafd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1413,7 +1414,6 @@ MonoBehaviour:
   player: {fileID: 69091932}
   pc: {fileID: 69091931}
   delayTime: 3
-  vision: 6
 --- !u!95 &657586850
 Animator:
   serializedVersion: 3
@@ -1433,6 +1433,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+  vision: 3
+  speed: 5
 --- !u!1001 &671277909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1682,7 +1684,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 4.5, y: 5.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1776,6 +1778,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+  speed: 3
 --- !u!1 &776975915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2923,7 +2926,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 27da607064ca6f7429c64886772b4813, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7625,7 +7628,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 4.5, y: 5.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -7719,6 +7722,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+  speed: 3
 --- !u!1 &1425338147
 GameObject:
   m_ObjectHideFlags: 0

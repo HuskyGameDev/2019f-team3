@@ -559,7 +559,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 4.5, y: 5.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -653,6 +653,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+  speed: 3
 --- !u!1 &566501076
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +705,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 4.5, y: 5.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -798,6 +799,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+  speed: 3
 --- !u!1001 &683948993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15132,7 +15134,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.92, y: 1.92}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 4.5, y: 5.3}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -15226,6 +15228,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+  speed: 3
 --- !u!1 &1708550024
 GameObject:
   m_ObjectHideFlags: 0
