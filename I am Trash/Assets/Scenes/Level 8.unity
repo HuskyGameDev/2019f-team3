@@ -407,6 +407,7 @@ MonoBehaviour:
   pc: {fileID: 741987396}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &72134180
 Animator:
   serializedVersion: 3
@@ -722,6 +723,7 @@ MonoBehaviour:
   pc: {fileID: 741987396}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &302551093
 Animator:
   serializedVersion: 3
@@ -952,6 +954,7 @@ MonoBehaviour:
   pc: {fileID: 741987396}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &388257629
 Animator:
   serializedVersion: 3
@@ -24069,6 +24072,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4702675897730185122, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702675897730185122, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.95
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce2e1cb4355e0f47a7de2cdcb80f13c, type: 3}
 --- !u!1 &741987395 stripped
@@ -24391,6 +24404,7 @@ MonoBehaviour:
   pc: {fileID: 741987396}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &978159501
 Animator:
   serializedVersion: 3
@@ -24536,6 +24550,7 @@ MonoBehaviour:
   pc: {fileID: 741987396}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &1036650852
 Animator:
   serializedVersion: 3
@@ -25250,12 +25265,12 @@ PrefabInstance:
     - target: {fileID: 7180773021915065029, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.96
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7180773021915065029, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.54
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7180773021915065029, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
@@ -25320,7 +25335,7 @@ PrefabInstance:
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.92908525
+      value: 0.7295208
       objectReference: {fileID: 0}
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
@@ -25330,12 +25345,12 @@ PrefabInstance:
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0
+      value: -0.4807694
       objectReference: {fileID: 0}
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.92908525
+      value: 0.7295208
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad5883d1738a496b80d630b90295e92, type: 3}

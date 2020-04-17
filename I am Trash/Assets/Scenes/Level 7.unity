@@ -238,6 +238,7 @@ MonoBehaviour:
   pc: {fileID: 279917667}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &48223633
 Animator:
   serializedVersion: 3
@@ -23458,6 +23459,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4702675897730185122, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702675897730185122, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.95
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce2e1cb4355e0f47a7de2cdcb80f13c, type: 3}
 --- !u!1 &279917666 stripped
@@ -24142,6 +24153,7 @@ MonoBehaviour:
   pc: {fileID: 279917667}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &702978268
 Animator:
   serializedVersion: 3
@@ -24337,7 +24349,7 @@ PrefabInstance:
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.92908525
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
@@ -24352,7 +24364,7 @@ PrefabInstance:
     - target: {fileID: 7180773021915065031, guid: 9ad5883d1738a496b80d630b90295e92,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.92908525
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad5883d1738a496b80d630b90295e92, type: 3}
@@ -25474,6 +25486,7 @@ MonoBehaviour:
   pc: {fileID: 279917667}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &1678034090
 Animator:
   serializedVersion: 3
@@ -25821,6 +25834,7 @@ MonoBehaviour:
   pc: {fileID: 279917667}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &1881476091
 Animator:
   serializedVersion: 3
@@ -26045,6 +26059,7 @@ MonoBehaviour:
   pc: {fileID: 279917667}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &1971804544
 Animator:
   serializedVersion: 3

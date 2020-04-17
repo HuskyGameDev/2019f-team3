@@ -382,6 +382,7 @@ MonoBehaviour:
   pc: {fileID: 1522142152}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &118630696
 Animator:
   serializedVersion: 3
@@ -864,6 +865,7 @@ MonoBehaviour:
   pc: {fileID: 1522142152}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &249045108
 Animator:
   serializedVersion: 3
@@ -1525,6 +1527,7 @@ MonoBehaviour:
   pc: {fileID: 1522142152}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &580496333
 Animator:
   serializedVersion: 3
@@ -1670,6 +1673,7 @@ MonoBehaviour:
   pc: {fileID: 1522142152}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &657503876
 Animator:
   serializedVersion: 3
@@ -2510,6 +2514,7 @@ MonoBehaviour:
   pc: {fileID: 1522142152}
   delayTime: 3
   vision: 6
+  speed: 3
 --- !u!95 &1169507922
 Animator:
   serializedVersion: 3
@@ -25524,6 +25529,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702675897730185122, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702675897730185122, guid: cce2e1cb4355e0f47a7de2cdcb80f13c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce2e1cb4355e0f47a7de2cdcb80f13c, type: 3}
