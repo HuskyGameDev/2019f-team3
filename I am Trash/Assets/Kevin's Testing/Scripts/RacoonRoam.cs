@@ -480,47 +480,51 @@ public class RacoonRoam : MonoBehaviour
         }
         else
         {
-            //Figure out animation
-            //Find target coordinates
-            float pX = target.x;
-            float pY = target.y;
-
-            //Get our coordinates
-            float eX = transform.position.x;
-            float eY = transform.position.y;
-
-            float distX = eX - pX;
-            float distY = eY - pY;
-
-            if (Mathf.Abs(distX) > Mathf.Abs(distY))
+            if ( anim != null )
             {
-                //Going horizontal
-                if (distX < 0)
+                //Figure out animation
+                //Find target coordinates
+                float pX = target.x;
+                float pY = target.y;
+
+                //Get our coordinates
+                float eX = transform.position.x;
+                float eY = transform.position.y;
+
+                float distX = eX - pX;
+                float distY = eY - pY;
+
+                if (Mathf.Abs(distX) > Mathf.Abs(distY))
                 {
-                    //going right
-                    anim.Play("RaccoonWalkRight");
+                    //Going horizontal
+                    if (distX < 0)
+                    {
+                        //going right
+                        anim.Play("RaccoonWalkRight");
+                    }
+                    else
+                    {
+                        anim.Play("RaccoonWalkLeft");
+                    }
                 }
                 else
                 {
-                    anim.Play("RaccoonWalkLeft");
-                }
-            }
-            else
-            {
-                //Going vertical
-                if (distY < 0)
-                {
-                    //go up
-                    anim.Play("RaccoonWalkUp");
-                }
-                else
-                {
-                    anim.Play("RaccoonWalkDown");
+                    //Going vertical
+                    if (distY < 0)
+                    {
+                        //go up
+                        anim.Play("RaccoonWalkUp");
+                    }
+                    else
+                    {
+                        anim.Play("RaccoonWalkDown");
+                    }
                 }
             }
 
             transform.position = Vector3.MoveTowards(transform.position, target, 3 * Time.deltaTime);
             delay--;
+            Debug.Log("This is working");
         }
     }
 
